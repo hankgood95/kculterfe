@@ -1,0 +1,22 @@
+[
+    {
+		"page":	[
+			{
+				"title": "IdolList",
+				"icon": ""
+			},
+			{
+				"title": "Map",
+				"icon": ""
+			},
+			{
+				"title": "MyPage",
+				"icon": ""
+			}
+		]
+    },
+	{
+		"name": "홍길동",
+		"img": ""
+	}
+]
