@@ -28,7 +28,7 @@ const initState = {
 		lat: 0,
 		lng: 0,
 	},
-	courseList: [],
+	courseList: null,
 }
 
 // 액션 추가 여기
