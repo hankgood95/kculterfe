@@ -11,7 +11,8 @@
 		margin-left: 4rem;
 		padding-right: 1rem;
 		overflow: auto;
-		height: 45rem;
+		height: 75vh;
+		/* position: relative; */
 	}
 }
 
