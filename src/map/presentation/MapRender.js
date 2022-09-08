@@ -5,6 +5,7 @@ import React, {
 import {
 	DirectionsRenderer,
 	DirectionsService,
+	DistanceMatrixService,
 	GoogleMap,
 } from '@react-google-maps/api';
 import {
@@ -14,7 +15,8 @@ import {
 	handleOnUnmount,
 } from '../container/handleGM';
 import {
-	useDispatch, useSelector,
+	useDispatch,
+	useSelector,
 } from 'react-redux';
 import Search from './Search';
 import MapMarker from './MapMarker';
@@ -23,20 +25,29 @@ import MapFilter from './MapFilter'
 
 import staypin from '../../src_asset/stay_logo.png';
 
-export function directionsCallback(res) {
-	console.log(res)
-
+export function directionsCallback(res, setDirection) {
 	if (res !== null) {
 		if (res.status === 'OK') {
-			console.log(res);
+			setDirection(() => res);
 		} else {
-			console.log('res: ', res)
+			console.log('res: ', res);
 		}
 	}
 }
 
+export function distanceCallback(res, status, setCourseList) {
+	if (res !== null) {
+		if (status === 'OK') {
+			console.log('거리: ' + res.rows[0].elements[0].distance.text);
+			console.log('소요 시간: ' + res.rows[0].elements[0].duration.text);
+		} else {
+			console.log('res: ', res);
+		}
+	}
+	setCourseList(() => null);
+}
+
 function MapRender(props) {
-	const direction = useSelector(state => state.courseList);
 	const dispatch = useDispatch();
 	const google = window.google;
 	const [map, setMap] = useState(null);
@@ -87,6 +98,13 @@ function MapRender(props) {
 			lng: props.kculter.center.lng,
 		}));
 	}, [props.kculter.center]);
+
+	const courseListRedux = useSelector(state => state.courseList);
+	const [courseList, setCourseList] = useState(courseListRedux);
+	const [direction, setDirection] = useState(null);
+	useEffect(() => {
+		setCourseList(() => courseListRedux);
+	}, [courseListRedux]);
 
 	return (
 		<div className='map-container'>
@@ -139,17 +157,22 @@ function MapRender(props) {
 
 				{/* 길찾기 */}
 				{
-					direction.length > 0 &&
+					courseList &&
 					<DirectionsService
         	  // required
         	  options={{
-        	    origin: { lat: direction[0].lat, lng:direction[0].lng },
-							waypoints: [],
-        	    destination: { lat: direction[direction.length - 1].lat, lng:direction[direction.length - 1].lng },
+        	    origin: {
+								lat: courseList[0].lat,
+								lng: courseList[0].lng,
+							},
+							destination: {
+								lat: courseList[courseList.length - 1].lat,
+								lng: courseList[courseList.length - 1].lng,
+							},
         	    travelMode: 'TRANSIT',
         	  }}
         	  // required
-        	  callback={(res) => directionsCallback(res)}
+        	  callback={(res) => directionsCallback(res, setDirection)}
         	  // optional
         	  onLoad={directionsService => {
         	    console.log('DirectionsService onLoad directionsService: ', directionsService)
@@ -160,9 +183,34 @@ function MapRender(props) {
         	  }}
         	/>
 				}
+				{/* 길찾기 소요 시간 */}
+				{
+					courseList &&
+					<DistanceMatrixService
+						options={{
+							origins: [{
+								lat: courseList[0].lat,
+								lng: courseList[0].lng,
+							}],
+							destinations: [{
+								lat: courseList[courseList.length - 1].lat,
+								lng: courseList[courseList.length - 1].lng,
+							}],
+							travelMode: 'TRANSIT',
+						}}
+						callback={(res, status) => distanceCallback(res, status, setCourseList)}
+					/>
+				}
 				{/* 길찾기 렌더링 */}
-				{/* <DirectionsRenderer
-				/> */}
+				{
+					direction &&
+					<DirectionsRenderer
+						options={{
+							directions: direction,
+						}}
+						// onLoad={() => {setDirection(null)}}
+					/>
+				}
 			</GoogleMap>
 		</div>
 	)
