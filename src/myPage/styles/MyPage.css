@@ -78,6 +78,7 @@
 /* day 카드 오른쪽 */
 #my-body .box-card-item .right {
 	background-color: white;
+	position: relative;
 }
 
 /* 장소 카드 전체 감싸는 부분 */
