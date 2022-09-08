@@ -94,6 +94,7 @@ h3,p{
 	overflow: hidden;
 	position: relative;
 	height: 300px;
+	width: auto;
 	display: block;
 	justify-content: center;
 }
@@ -166,6 +167,15 @@ h3,p{
 
 .button:hover {
 	color: white;
+}
+
+/* for horizontal modal in large screen*/
+@media (min_width: 950px) {
+	.modal {
+		display: flex;
+		flex-direction: row;
+
+	}
 }
 
 @media (max_width: 950px) {
