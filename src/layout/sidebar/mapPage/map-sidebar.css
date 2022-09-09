@@ -168,6 +168,51 @@
   font-weight: bold;
 }
 
-.modal{
+.mmodal{
+
+}
+
+.course-modal{
+  position: relative;
+  top:180px;
+  left: 25rem;
+  padding: 90px 40px 50px 40px;
+  background-color: #fff;
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  border-radius: 13px;
+}
+.course-modal form{
+  position: relative;
+  top:90px;
+}
+
+.course-modal input {
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 15px;
   padding: 10px 10px;
+  border-color: #0076ff;
+}
+
+.course-modal button{
+  color: #fff;
+  margin: 0px 10px;
+  background-color: #0076ff;
+  font-weight: bold;
+  border-style: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  right: 10px;
+  position: relative;
+}
+
+.modalspan{
+  font-weight: bold;
+  position: relative;
+  bottom: 30px;
+  font-size: 50px;
+  color: #1755d0;
+  line-height: 70px;
 }

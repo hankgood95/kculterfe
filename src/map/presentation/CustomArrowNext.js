@@ -1,4 +1,6 @@
 import React from 'react';
+import {FaAngleDoubleLeft, FaAngleDoubleRight} from "react-icons/fa";
+import '../style/MapPage.css';
 
 function CustomArrowNext(props) {
 	return (
@@ -8,7 +10,10 @@ function CustomArrowNext(props) {
 		<button className='arrow'
 			onClick={props.sliderRef.current.slickNext}
 		>
-			<img
+			<FaAngleDoubleRight
+				className='Fa-Double'
+				id="Fa-Next"
+				size="40"
 				src={"http://cdn.onlinewebfonts.com/svg/img_92254.png"}
 				alt={"next arrow"}
 			/>
