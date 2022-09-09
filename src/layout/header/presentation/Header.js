@@ -30,7 +30,7 @@ function Header(props) {
 				break;
 			case '/IdolListPage':
 				setTitle((title) => "K-Culter");
-				setImg((img) => "");
+				setImg((img) => "https://cdn-icons-png.flaticon.com/512/77/77521.png");
 				break;
 			case '/ConcertPage':
 				setTitle((title) => "K-Culter");
