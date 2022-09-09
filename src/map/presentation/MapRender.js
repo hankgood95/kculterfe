@@ -24,6 +24,7 @@ import MapCard from './MapCard';
 import MapFilter from './MapFilter'
 
 import stayPin from '../../src_asset/stay_pin.png';
+import tourPin from '../../src_asset/tour_pin.png';
 
 export function directionsCallback(res, setDirection) {
 	if (res !== null) {
@@ -72,7 +73,7 @@ function MapRender(props) {
 	const [near, setNear] = useState({
 		place: null,
 		stayPin: { imageUrl: stayPin },
-		tourPin: { imageUrl: "https://toppng.com/uploads/preview/mountain-png-transparent-free-images-clip-art-mountain-logo-11562903198rqfbyusjl7.png" },
+		tourPin: { imageUrl: tourPin },
 		isStay: true,
 		url: "/near/stay?lat=",
 	});
@@ -99,12 +100,12 @@ function MapRender(props) {
 		}));
 	}, [props.kculter.center]);
 
-	const courseListRedux = useSelector(state => state.courseList);
-	const [courseList, setCourseList] = useState(courseListRedux);
-	const [direction, setDirection] = useState(null);
-	useEffect(() => {
-		setCourseList(() => courseListRedux);
-	}, [courseListRedux]);
+	// const courseListRedux = useSelector(state => state.courseList);
+	// const [courseList, setCourseList] = useState(courseListRedux);
+	// const [direction, setDirection] = useState(null);
+	// useEffect(() => {
+	// 	setCourseList(() => courseListRedux);
+	// }, [courseListRedux]);
 
 	return (
 		<div className='map-container'>
@@ -156,7 +157,7 @@ function MapRender(props) {
 				/>
 
 				{/* 길찾기 */}
-				{
+				{/* {
 					courseList &&
 					<DirectionsService
         	  // required
@@ -182,9 +183,9 @@ function MapRender(props) {
         	    console.log('DirectionsService onUnmount directionsService: ', directionsService)
         	  }}
         	/>
-				}
+				} */}
 				{/* 길찾기 소요 시간 */}
-				{
+				{/* {
 					courseList &&
 					<DistanceMatrixService
 						options={{
@@ -200,9 +201,9 @@ function MapRender(props) {
 						}}
 						callback={(res, status) => distanceCallback(res, status, setCourseList)}
 					/>
-				}
+				} */}
 				{/* 길찾기 렌더링 */}
-				{
+				{/* {
 					direction &&
 					<DirectionsRenderer
 						options={{
@@ -210,7 +211,7 @@ function MapRender(props) {
 						}}
 						// onLoad={() => {setDirection(null)}}
 					/>
-				}
+				} */}
 			</GoogleMap>
 		</div>
 	)

@@ -15,7 +15,9 @@ import {
 import {
 	getKculterData
 } from '../container/getData';
-import { useDispatch } from 'react-redux';
+import {
+	useDispatch
+} from 'react-redux';
 
 async function fetchSelected(list, e, isKpop, setKculter, dispatch) {
 	const found = list.find(obj => obj.hash == e.target.value);

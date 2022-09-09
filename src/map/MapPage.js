@@ -14,7 +14,6 @@ import {
 } from 'react-redux';
 import MapRender from './presentation/MapRender';
 import './style/MapPage.css';
-
 import coursePin from '../src_asset/k_pin.png';
 
 const lib = ['places'];
@@ -49,6 +48,7 @@ function MapPage() {
 			pin: {
 				imageUrl: null,
 			},
+			img: reduxConcert.img,
 		},
 		course: {
 			place: reduxCourse,

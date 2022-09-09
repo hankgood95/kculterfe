@@ -15,6 +15,8 @@ import {
 } from '../container/handleGM'
 import CustomMarker from './CustomMarker';
 
+// import concertPin from '../../src_asset/tour_pin.png';
+
 function MapMarker(props) {
 	const reduxCourse = useSelector(state => state.course);
 	const [course, setCourse] = useState(props.course);
@@ -85,6 +87,14 @@ function MapMarker(props) {
 				props.concert.lat &&
 				props.concert.lng &&
 				<Marker
+					// icon={
+					// 	new window.google.maps.MarkerImage(
+					// 		concertPin,
+					// 		null,
+					// 		null,
+					// 		null,
+					// 		new window.google.maps.Size(40, 40))
+					// }
 					position={{
 						lat: props.concert.lat,
 						lng: props.concert.lng

@@ -171,7 +171,7 @@
 	text-overflow: ellipses;
 	padding-left: 10px;
 	padding-right: 25px;
-	background: url('../drop-down.png') no-repeat 95% 50%/15px auto;
+	background: url('../../src_asset/drop_down.png') no-repeat 95% 50%/15px auto;
 	background-color: white;
 }
 

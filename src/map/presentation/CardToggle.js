@@ -1,5 +1,6 @@
 import React from 'react';
-import kpop from '../../src_asset/stay_logo.png';
+import stay from '../../src_asset/stay_logo.png';
+import tour from '../../src_asset/tour_pin.png';
 
 function CardToggle(props) {
 	return (
@@ -13,7 +14,7 @@ function CardToggle(props) {
 				}}
 			>
 				<img
-					src={kpop}
+					src={stay}
 					alt='filter'
 				/>
 				<p>
@@ -29,7 +30,7 @@ function CardToggle(props) {
 				}}
 			>
 				<img
-					src={kpop}
+					src={tour}
 					alt='filter'
 				/>
 				<p>

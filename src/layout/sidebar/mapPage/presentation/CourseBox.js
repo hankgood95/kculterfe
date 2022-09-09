@@ -13,17 +13,17 @@ import {
 	handleOnClickSave,
 	handleOnSubmit,
 } from '../container/handleMapSideNav';
-import { GET_DIRECTION } from '../../../../redux/reducer';
+// import { GET_DIRECTION } from '../../../../redux/reducer';
 
-export function handleOnClickDirection(courseList, dispatch) {
-	if (courseList.length <= 0) {
-		return;
-	}
-	dispatch({
-		type: GET_DIRECTION,
-		data: courseList
-	});
-}
+// export function handleOnClickDirection(courseList, dispatch) {
+// 	if (courseList.length <= 0) {
+// 		return;
+// 	}
+// 	dispatch({
+// 		type: GET_DIRECTION,
+// 		data: courseList
+// 	});
+// }
 
 function CourseBox({ place }) {
 	const memberHash = window.sessionStorage.getItem("memberHash");
@@ -43,12 +43,12 @@ function CourseBox({ place }) {
 				<p>
 					Course
 				</p>
-				<button
+				{/* <button
 					onClick={() => handleOnClickDirection(courseList, dispatch)}
 					className="direction-btn"
 				>
 					GET DIRECTION
-				</button>
+				</button> */}
 			</div>
       <CourseCard className='course-list'
 				courseList={courseList}

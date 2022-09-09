@@ -1,5 +1,6 @@
 import React from "react";
-import kpop from "../../src_asset/stay_logo.png"
+import kpop from "../../src_asset/kpop_img.png";
+import culture from "../../src_asset/culture_img.png";
 
 function FilterToggle(props) {
 	return (
@@ -23,7 +24,7 @@ function FilterToggle(props) {
 				}}
 			>
 				<img
-					src={kpop}
+					src={culture}
 					alt='filter'
 				/>
 				<p>

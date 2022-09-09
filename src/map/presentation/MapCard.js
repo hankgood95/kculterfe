@@ -9,6 +9,7 @@ import CardToggle from './CardToggle';
 import Cards from './Cards';
 import CustomArrowPrev from './CustomArrowPrev';
 import CustomArrowNext from './CustomArrowNext';
+import noImage from '../../src_asset/no_img.png';
 
 function MapCard(props) {
 	const settings = {
@@ -37,6 +38,13 @@ function MapCard(props) {
 				breakpoint: 992,
 				settings: {
 					slidesToShow: 4,
+					slidesToScroll: 1,
+				}
+			},
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 5,
 					slidesToScroll: 1,
 				}
 			}
@@ -77,7 +85,7 @@ function MapCard(props) {
 					props.near.place.map((item, index) => {
 						const head = props.near.isStay ? "STAY" : "TOUR";
 						const pin = props.near.isStay ? props.near.stayPin : props.near.tourPin;
-						const image = item.firstimage ? item.firstimage : "";
+						const image = item.firstimage ? item.firstimage : noImage;
 						return (
 							<Cards
 								key={index}
