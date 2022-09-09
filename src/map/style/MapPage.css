@@ -17,10 +17,10 @@
 .card-toggle-container {
   display: flex;
 	font-size: 12px;
-	width: 100%;
+	width: 50%;
 	height: 60px;
 	align-items: center;
-	justify-content: end;
+	justify-content:center;
 	margin-bottom: 10px;
 	padding-right: 30px;
 }
@@ -220,7 +220,7 @@
 }
 
 .Fa-Double{
-  color: #0074ff;
+  color: #fff;
   border-color: #fff;
 }
 
