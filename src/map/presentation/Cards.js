@@ -8,7 +8,7 @@ function Cards(props) {
 		<div className="card-item">
 			<button
 				onClick={() => {
-					handleCard(props.item, props.head, props.setCenter, props.setZoom, props.dispatch);
+					handleCard(props.item, props.head, props.setCenter, props.setZoom, props.dispatch, props.pin.imageUrl);
 				}}
 			>
 				<img

@@ -76,10 +76,12 @@ function MapCard(props) {
 					{props.near.place &&
 					props.near.place.map((item, index) => {
 						const head = props.near.isStay ? "STAY" : "TOUR";
+						const pin = props.near.isStay ? props.near.stayPin : props.near.tourPin;
 						const image = item.firstimage ? item.firstimage : "";
 						return (
 							<Cards
 								key={index}
+								pin={pin}
 								item={item}
 								title={item.title}
 								image={image}

@@ -15,10 +15,10 @@ function useFocusOn(place, setCenter, setZoom, dispatch) {
 	});
 }
 
-export function handleCard(data, head, setCenter, setZoom, dispatch) {
+export function handleCard(data, head, setCenter, setZoom, dispatch, pin) {
 	const place = {
 		head: head,
-		imageUrl: stayLogo,
+		imageUrl: pin,
 		address: data.addr1,
 		culture: "",
 		explain: "",

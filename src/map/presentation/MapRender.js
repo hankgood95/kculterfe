@@ -23,7 +23,7 @@ import MapMarker from './MapMarker';
 import MapCard from './MapCard';
 import MapFilter from './MapFilter'
 
-import staypin from '../../src_asset/stay_logo.png';
+import stayPin from '../../src_asset/stay_pin.png';
 
 export function directionsCallback(res, setDirection) {
 	if (res !== null) {
@@ -71,7 +71,7 @@ function MapRender(props) {
 
 	const [near, setNear] = useState({
 		place: null,
-		stayPin: { imageUrl: staypin },
+		stayPin: { imageUrl: stayPin },
 		tourPin: { imageUrl: "https://toppng.com/uploads/preview/mountain-png-transparent-free-images-clip-art-mountain-logo-11562903198rqfbyusjl7.png" },
 		isStay: true,
 		url: "/near/stay?lat=",

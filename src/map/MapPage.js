@@ -15,6 +15,8 @@ import {
 import MapRender from './presentation/MapRender';
 import './style/MapPage.css';
 
+import coursePin from '../src_asset/k_pin.png';
+
 const lib = ['places'];
 
 function MapPage() {
@@ -44,11 +46,15 @@ function MapPage() {
 		concertProps: reduxConcert,
 		concert: {
 			place: null,
-			pin: null,
+			pin: {
+				imageUrl: null,
+			},
 		},
 		course: {
 			place: reduxCourse,
-			pin: "",
+			pin: {
+				imageUrl: coursePin,
+			}
 		},
 	});
 	

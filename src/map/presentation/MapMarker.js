@@ -43,10 +43,10 @@ function MapMarker(props) {
 			}
 			{/* 코스 마커 */}
 			{
-				props.course.place &&
+				course.place &&
 				<CustomMarker
 					place={course.place}
-					pin={props.course.pin}
+					pin={course.pin}
 					title={"COURSE"}
 					markerHandler={handleCustomMarker}
 					setCenter={props.setCenter}
