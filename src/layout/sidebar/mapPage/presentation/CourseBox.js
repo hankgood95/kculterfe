@@ -72,7 +72,9 @@ function CourseBox({ place }) {
 				<Modal
 					isOpen={modalIsOpen}
 					ariaHideApp={false}
+					className="course-modal"
 				>
+					<span className='modalspan'>Make your own <br></br>travel course.</span>
 					<form 
 						onSubmit={e => handleOnSubmit(e, courseList, setCourseList, courseName, memberHash, setModalIsOpen, dispatch)}
 					>
@@ -92,11 +94,11 @@ function CourseBox({ place }) {
 								setModalIsOpen(false);
 							}}
 						>
-							EXIT
+							EXIT!!!!
 						</button>
 					</form>
 				</Modal>
-    </div>
+				</div>
 	);
 }
 

@@ -129,7 +129,19 @@
   box-shadow: 5px 5px 10px gray;
   font-size: 14px;
   text-overflow: ellipses;
-	padding-left: 10px;
+	padding-left: 40px;
+  border-color: #0074ff;
+  background-color: white;
+  color: black;
+	background-image: url("https://i.imgur.com/VbBlOIf.png");
+  background-size: 1rem;
+	background-repeat: no-repeat;
+  background-position: 10px center;
+  outline: none;
+}
+
+.autocomplete-input input {
+  padding-left: 2rem;
 }
 
 .search-box {
@@ -205,4 +217,14 @@
 	width: 40px;
 	height: 40px;
 	margin: 0 auto;
+}
+
+.Fa-Double{
+  color: #0074ff;
+  border-color: #fff;
+}
+
+#Fa-Next{
+  position: relative;
+  right: 60px;
 }
