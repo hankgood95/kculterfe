@@ -15,7 +15,8 @@ header {
   header .left img {
 	height: 30px;
 	width: 30px;
-	margin-right: 10px;
+	margin-left: 10px;
+	margin-right: 30px;
   }
 
 	header .left .title {

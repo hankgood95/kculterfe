@@ -19,6 +19,7 @@
 .CardDiv{
 	display: 0;
 	float: left;
+	margin-bottom: 10px;
 }
 
 @media (max-width: 950px) {
@@ -31,13 +32,13 @@
 
 @media (min-width: 1000px) {
 	.SearchBar {
-		margin-left: 3rem;
+		margin-left: 4rem;
 	}
 	.CardContainer {
 		grid-template-columns: repeat(4, 1fr); 
-		padding-right: 3rem;
+		padding-right: 2rem;
 	}
 	.CardDiv {
-		margin-left: 3rem;
+		margin-left: 2rem;
 	}
 }

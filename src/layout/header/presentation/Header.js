@@ -30,7 +30,6 @@ function Header(props) {
 	const settingSelected = useSelector(state => state.settingSelected);
 
 	useEffect(() => {
-		console.log(idolSelected, attrSelected, concertSelected, dashboardSelected, settingSelected);
 		if (location.pathname == "/MapPage") {
 			setTitle((title) => "Map");
 			setImg((img) => map);

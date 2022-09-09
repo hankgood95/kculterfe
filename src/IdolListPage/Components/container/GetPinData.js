@@ -15,7 +15,7 @@ export async function getPin(type, keyHash) {
             return list;
         })
         .catch(function(error){
-            console.log(error);
+            // console.log(error);
             alert("서버 통신 실패");
         });
     } else if (type == 2) {
@@ -28,7 +28,7 @@ export async function getPin(type, keyHash) {
             return list;
         })
         .catch(function(error){
-            console.log(error);
+            // console.log(error);
             alert("서버 통신 실패");
         });
     } else {
