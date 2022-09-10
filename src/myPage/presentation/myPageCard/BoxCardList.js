@@ -39,7 +39,10 @@ const AddtoCouseBtn = styled.span`
 	padding: 1px 10px 3.5px 12px;
 	outline: 2px solid black;
 	outline-offset: -9px;
+	background: white;
+	opacity: 0.7;
 	
+
 	&:hover {
 		background: #f4029b;
 		cursor: pointer;

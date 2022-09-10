@@ -104,10 +104,17 @@
 
 #my-body .body-card-body {
 	background: gainsboro;
-	padding-top: 0.5em;
+	padding-top: 0.5rem;
 	padding-bottom: 0;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
 	height: 4rem;
 	color: black;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
 }
 
 #my-body .body-card .body-card-hover {
