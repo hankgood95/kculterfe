@@ -8,7 +8,6 @@ export function handleOnClickAdd(place, courseList, setCourseList, dispatch) {
 		alert("Please select the place before add the course.");
 		return;
 	}
-	console.log(place);
 	if (courseList.length > 15) {
 		alert("Too many courses.");
 		return;
@@ -42,6 +41,7 @@ export function handleOnSubmit(e, courseList, setCourseList, courseName, memberH
 		courseName: courseName,
 		course: courseList,
 	});
+	axios.defaults.baseURL = 'http://3.37.88.220:8080';
 	axios.post('/course/', jsonData, {
 		headers:{
 			'Content-Type':'application/json'

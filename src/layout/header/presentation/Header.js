@@ -16,6 +16,8 @@ import map from '../../../src_asset/map.svg';
 import mypage from '../../../src_asset/gear.svg';
 import noImage from '../../../src_asset/no_img.png';
 import concertImg from '../../../src_asset/ticket-detailed.svg';
+import kpop from '../../../src_asset/star.svg';
+import culture from '../../../src_asset/balloon.svg';
 
 function Header(props) {
 	const location = useLocation();
@@ -36,10 +38,10 @@ function Header(props) {
 			setImg((img) => map);
 		} else if (location.pathname == "/IdolListPage" && idolSelected) {
 			setTitle((title) => "Kpop");
-			setImg((img) => "https://i.pinimg.com/originals/7f/b0/c9/7fb0c94c6252c18e16ec4bde430cdf2b.png");
+			setImg((img) => kpop);
 		} else if (location.pathname == "/IdolListPage" && attrSelected) {
 			setTitle((title) => "Culture");
-			setImg((img) => "https://i.pinimg.com/originals/7f/b0/c9/7fb0c94c6252c18e16ec4bde430cdf2b.png");
+			setImg((img) => culture);
 		} else if (location.pathname == "/IdolListPage" && concertSelected) {
 			setTitle((title) => "Concert");
 			setImg((img) => concertImg);
@@ -84,7 +86,6 @@ function Header(props) {
 						/>
 					</button>
 				</Link>
-				{/* <i className="bi bi-list"/> */}
 			</div>
 		</header>
 	);

@@ -15,8 +15,6 @@ import {
 } from '../container/handleGM'
 import CustomMarker from './CustomMarker';
 
-// import concertPin from '../../src_asset/tour_pin.png';
-
 function MapMarker(props) {
 	const reduxCourse = useSelector(state => state.course);
 	const [course, setCourse] = useState(props.course);

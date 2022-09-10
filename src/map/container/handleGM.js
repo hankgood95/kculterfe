@@ -87,11 +87,6 @@ export function handleOnClickGM(map, e, google, setCenter, setZoom, dispatch) {
 	const request = {
 		placeId: e.placeId,
 		fields: [
-			// "formatted_address",
-			// "international_phone_number",
-			// "name",
-			// "photos",
-			// "geometry"
 			"ALL"
 		],
 	};
@@ -111,6 +106,7 @@ export function handleOnDragEndGM(map, url, setNear) {
 	if (!map || !url) {
 		return;
 	}
+	axios.defaults.baseURL = 'http://3.37.88.220:8080';
 	axios.get(url + map.getCenter().lat() + '&lng=' + map.getCenter().lng())
 	.then(function(res){
 		const data = res.data.map((item) => {

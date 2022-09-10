@@ -1,5 +1,4 @@
 import React, {
-	useEffect,
 	useState,
 } from 'react';
 import {
@@ -9,10 +8,8 @@ import {
 	handleOnPlaceChangedAutocomplete
 } from '../container/handleAutocomplete';
 
-function handleOnLoadAutocomplete(autocomplete, setInput, concert) {
+function handleOnLoadAutocomplete(autocomplete, setInput) {
 	setInput(() => autocomplete);
-	// if (concert.lat !== 0 && concert.lng !== 0) {
-	// }
 }
 
 function Search({ setCenter, setZoom, dispatch }) {
