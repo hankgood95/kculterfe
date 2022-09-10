@@ -1,5 +1,8 @@
 import React from 'react';
-import {FaAngleDoubleLeft, FaAngleDoubleRight} from "react-icons/fa";
+import {
+	FaAngleDoubleRight
+} from "react-icons/fa";
+
 import '../style/MapPage.css';
 
 function CustomArrowNext(props) {

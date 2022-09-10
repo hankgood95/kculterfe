@@ -1,6 +1,4 @@
-import axios from 'axios';
 import {
-	handleCustomMarker,
 	handleGoogleMarkerAndSearch,
 	handleOnLoadKculter
 } from './handleOnMarker';
@@ -9,6 +7,7 @@ import {
 	CLEAR_MAP_CONCERT,
 	CLEAR_PLACE
 } from '../../redux/reducer';
+import axios from 'axios';
 
 export function handleOnUnmount(map, setMap, dispatch) {
 	setMap(() => map);

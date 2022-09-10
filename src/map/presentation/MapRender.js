@@ -97,8 +97,12 @@ function MapRender(props) {
 
 				{/* 필터 */}
 				<MapFilter
+					map={map}
+					google={google}
 					kculter={props.kculter}
 					setKculter={props.setKculter}
+					setCenter={setCenter}
+					setZoom={setZoom}
 				/>
 
 				{/* 마커 */}

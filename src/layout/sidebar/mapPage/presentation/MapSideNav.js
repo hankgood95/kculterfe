@@ -1,5 +1,6 @@
 import React, {
 	useEffect,
+	useState,
 } from 'react';
 import { useSelector } from 'react-redux';
 import Head from './Head';
@@ -10,9 +11,11 @@ import '../map-sidebar.css';
 function MapSideNav(props) {
 	const place = useSelector(state => state.place);
 	const concert = useSelector(state => state.mapConcert);
+	const [placeImg, setPlaceImg] = useState(null);
 
 	useEffect(() => {
 		props.handleOpen(true);
+		setPlaceImg(place.fileUrl);
 	}, [place]);
 
 	return (
@@ -26,9 +29,9 @@ function MapSideNav(props) {
 			}
 			{
 				place.name &&
-			<img className="place-img"
-				src={place.fileUrl}
-				alt={place.name}
+				<img className="place-img"
+					src={placeImg ? placeImg : place.fileUrl}
+					alt={place.name}
 				/>
 			}
 			{
@@ -38,14 +41,8 @@ function MapSideNav(props) {
 						name={place.name}
 						address={place.address}
 						explain={place.explain}
+						phone={place.phone_num}
 					/>
-					{/* {
-						place.phone_num &&
-						<div className="phone-num">
-							<p>Phone Number</p>
-							<p>{place.phone_num}</p>
-						</div>
-					} */}
 					{
 						place.photos &&
 						<div className="map-sidebar-photos">
@@ -58,22 +55,9 @@ function MapSideNav(props) {
 											key={index}
 											src={item.getUrl()}
 											alt={place.name}
-										/>
-								)}
-							</div>
-						</div>
-					}
-					{
-						place.stayPhotos &&
-						<div className="map-sidebar-photos">
-							<div className="photos-title">
-								<p>Photos</p>
-							</div>
-							<div className="photos-content">
-								{place.stayPhotos.map((item) => 
-										<img className="photos-item"
-											src={item.image}
-											alt={place.name}
+											onClick={() => {
+												setPlaceImg(item.getUrl())
+											}}
 										/>
 								)}
 							</div>

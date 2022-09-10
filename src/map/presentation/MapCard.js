@@ -3,12 +3,14 @@ import React, {
 	useEffect,
 } from 'react';
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
 import CardToggle from './CardToggle';
 import Cards from './Cards';
 import CustomArrowPrev from './CustomArrowPrev';
 import CustomArrowNext from './CustomArrowNext';
+
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
 import noImage from '../../src_asset/no_img.png';
 
 function MapCard(props) {

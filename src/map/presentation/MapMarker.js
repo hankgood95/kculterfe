@@ -1,4 +1,3 @@
-import { Marker } from '@react-google-maps/api';
 import React, {
 	useState,
 	useEffect,
@@ -6,6 +5,9 @@ import React, {
 import {
 	useSelector
 } from 'react-redux';
+import {
+	Marker
+} from '@react-google-maps/api';
 import {
 	handleCustomMarker,
 	handleCard,
@@ -87,14 +89,6 @@ function MapMarker(props) {
 				props.concert.lat &&
 				props.concert.lng &&
 				<Marker
-					// icon={
-					// 	new window.google.maps.MarkerImage(
-					// 		concertPin,
-					// 		null,
-					// 		null,
-					// 		null,
-					// 		new window.google.maps.Size(40, 40))
-					// }
 					position={{
 						lat: props.concert.lat,
 						lng: props.concert.lng

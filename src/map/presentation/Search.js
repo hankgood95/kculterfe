@@ -8,16 +8,12 @@ import {
 	handleOnPlaceChangedAutocomplete
 } from '../container/handleAutocomplete';
 
-function handleOnLoadAutocomplete(autocomplete, setInput) {
-	setInput(() => autocomplete);
-}
-
 function Search({ setCenter, setZoom, dispatch }) {
 	const [input, setInput] = useState(null);
 
 	return (
 		<Autocomplete
-			onLoad={autocomplete => handleOnLoadAutocomplete(autocomplete, setInput)}
+			onLoad={autocomplete => setInput(() => autocomplete)}
 			onPlaceChanged={() => handleOnPlaceChangedAutocomplete(input, setCenter, setZoom, dispatch)}
 		>
 			<div className="search-box">

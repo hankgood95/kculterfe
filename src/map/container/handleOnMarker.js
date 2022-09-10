@@ -1,8 +1,9 @@
 import {
 	CLICK_PLACE
 } from "../../redux/reducer";
-import noImage from '../../src_asset/no_img.png';
 import axios from 'axios';
+
+import noImage from '../../src_asset/no_img.png';
 
 function useFocusOn(place, setCenter, setZoom, dispatch) {
 	setCenter(() => ({

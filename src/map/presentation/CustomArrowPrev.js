@@ -1,7 +1,9 @@
 import React from 'react';
-import {FaAngleDoubleLeft, FaAngleDoubleRight} from "react-icons/fa";
-import '../style/MapPage.css';
+import {
+	FaAngleDoubleRight
+} from "react-icons/fa";
 
+import '../style/MapPage.css';
 
 function CustomArrowPrev(props) {
 	let onClick = null;
