@@ -9,9 +9,9 @@ function MyPageBody() {
     return (
         <div id='my-body'>
             {/* 저장한 경로와 좋아요 리스트 선택 경로 네비 */}
-            <MyPageNavbar setLikeList={setLikeList} firstPageName="My map" secondPageName="Like list"/>
+            <MyPageNavbar setLikeList={setLikeList} firstPageName="My map" secondPageName=""/>
             {/* 저장한 경로 리스트 */}
-            { viewMyMap ? <BoxCardList/> : <BoxLikeList/> }
+            <BoxCardList/>
         </div>
     )
 }
