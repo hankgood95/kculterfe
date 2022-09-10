@@ -11,6 +11,7 @@ app.get("/ping",(req,res) =>{
 });
 
 app.use(express.static(path.join(__dirname,"build")));
+app.use('/', express.static(__dirname+'/server/build'))
 
 app.get("/*",(req,res) => {
 	res.set({
