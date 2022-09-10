@@ -55,10 +55,10 @@ export function handleOnSubmit(e, courseList, setCourseList, courseName, memberH
 				data: newCourseList,
 			})
 			setModalIsOpen(() => false);
-			alert("코스 저장 완료!");
+			alert("Sucess Save");
 		})
 		.catch(function(error){
 			console.log(error, "서버 통신 실패");
-			alert("코스 저장 실패");
+			alert("Fail Save");
 	})
 }

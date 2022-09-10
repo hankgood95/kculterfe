@@ -157,7 +157,7 @@ function MapRender(props) {
 				/>
 
 				{/* 길찾기 */}
-				{
+				{/* {
 					courseList &&
 					<DirectionsService
         	  // required
@@ -183,9 +183,9 @@ function MapRender(props) {
         	    console.log('DirectionsService onUnmount directionsService: ', directionsService)
         	  }}
         	/>
-				}
+				} */}
 				{/* 길찾기 소요 시간 */}
-				{
+				{/* {
 					courseList &&
 					<DistanceMatrixService
 						options={{
@@ -201,9 +201,9 @@ function MapRender(props) {
 						}}
 						callback={(res, status) => distanceCallback(res, status, setCourseList)}
 					/>
-				}
+				} */}
 				{/* 길찾기 렌더링 */}
-				{
+				{/* {
 					direction &&
 					<DirectionsRenderer
 						options={{
@@ -211,7 +211,7 @@ function MapRender(props) {
 						}}
 						// onLoad={() => {setDirection(null)}}
 					/>
-				}
+				} */}
 			</GoogleMap>
 		</div>
 	)

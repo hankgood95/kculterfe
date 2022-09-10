@@ -28,8 +28,6 @@ function IdolList({}) {
 					...prevState,
 					temp
 					]);
-					console.log(i + "th" + e);
-					console.log("loaded");
 				})
 				.catch(err => {
 					console.log(err)
