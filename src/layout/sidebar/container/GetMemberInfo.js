@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export async function getMemberInfo() {
+    axios.defaults.baseURL = 'http://3.37.88.220:0808';
     let list;
     //await 한 값을 보내준다.
     const memberHash = window.sessionStorage.getItem("memberHash")
