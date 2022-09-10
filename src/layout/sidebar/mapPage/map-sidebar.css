@@ -26,11 +26,9 @@
 
 .map-sidebar .head {
   display: flex;
+	height: 80px;
   justify-content: center;
 	align-items: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
-	/* margin-right: 30px; */
 }
 
 .map-sidebar .head img {
@@ -64,8 +62,57 @@
   margin: auto;
 }
 
+.map-sidebar .place .story-content h6 {
+	font-size: large;
+	font-weight: bold;
+}
+
 .map-sidebar .place .story-content p {
   font-size: small;
+}
+
+.map-sidebar .phone-num {
+	margin-bottom: 16px;
+}
+
+.map-sidebar .phone-num p {
+	margin: 0;
+}
+
+.map-sidebar .map-sidebar-photos {
+	display: flex;
+	flex-direction: column;
+	background-color: #0076ff;
+	height: 150px;
+	width: 100%;
+}
+
+.map-sidebar .map-sidebar-photos .photos-title {
+	height: 40px;
+	width: 100%;
+}
+
+.map-sidebar .map-sidebar-photos .photos-title p {
+	margin: 0;
+	margin-left: 10px;
+	margin-top: 5px;
+	font-size: large;
+	font-weight: bold;
+}
+
+.map-sidebar .map-sidebar-photos .photos-content {
+	display: flex;
+	width: 100%;
+	overflow-x: auto;
+	padding-left: 10px;
+	margin-right: 10px;
+}
+
+.map-sidebar .map-sidebar-photos .photos-item {
+	height: 100px;
+	width: 100px;
+	margin-right: 10px;
+	border: 1px solid darkblue;
 }
 
 .course {
@@ -169,18 +216,14 @@
 }
 
 .mmodal{
-
+  display: flex;
 }
 
 .course-modal{
-  position: relative;
-  top:180px;
-  left: 25rem;
+  align-self: center;
   padding: 90px 40px 50px 40px;
   background-color: #fff;
   width: 40vw;
-  display: flex;
-  justify-content: center;
   border-radius: 13px;
 }
 .course-modal form{
@@ -211,8 +254,7 @@
 .modalspan{
   font-weight: bold;
   position: relative;
-  bottom: 30px;
   font-size: 50px;
   color: #1755d0;
-  line-height: 70px;
+  line-height: 60px;
 }

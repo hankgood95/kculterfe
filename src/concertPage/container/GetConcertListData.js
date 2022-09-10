@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export async function getConcertList() {
+    axios.defaults.baseURL = 'http://3.37.88.220:0808';
     let list;
     //await 한 값을 보내준다.
     return await axios.get('/concerts', {
@@ -8,7 +9,6 @@ export async function getConcertList() {
     })
     .then(function(res){
         list = res.data;
-        console.log(list);
         return list;
     })
     .catch(function(error){

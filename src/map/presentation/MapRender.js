@@ -37,15 +37,15 @@ export function directionsCallback(res, setDirection) {
 }
 
 export function distanceCallback(res, status, setCourseList) {
-	if (res !== null) {
-		if (status === 'OK') {
-			console.log('거리: ' + res.rows[0].elements[0].distance.text);
-			console.log('소요 시간: ' + res.rows[0].elements[0].duration.text);
-		} else {
-			console.log('res: ', res);
-		}
-	}
-	setCourseList(() => null);
+	// if (res !== null) {
+	// 	if (status === 'OK') {
+	// 		console.log('거리: ' + res.rows[0].elements[0].distance.text);
+	// 		console.log('소요 시간: ' + res.rows[0].elements[0].duration.text);
+	// 	} else {
+	// 		console.log('res: ', res);
+	// 	}
+	// }
+	// setCourseList(() => null);
 }
 
 function MapRender(props) {
@@ -100,12 +100,12 @@ function MapRender(props) {
 		}));
 	}, [props.kculter.center]);
 
-	// const courseListRedux = useSelector(state => state.courseList);
-	// const [courseList, setCourseList] = useState(courseListRedux);
-	// const [direction, setDirection] = useState(null);
-	// useEffect(() => {
-	// 	setCourseList(() => courseListRedux);
-	// }, [courseListRedux]);
+	const courseListRedux = useSelector(state => state.courseList);
+	const [courseList, setCourseList] = useState(courseListRedux);
+	const [direction, setDirection] = useState(null);
+	useEffect(() => {
+		setCourseList(() => courseListRedux);
+	}, [courseListRedux]);
 
 	return (
 		<div className='map-container'>
@@ -157,7 +157,7 @@ function MapRender(props) {
 				/>
 
 				{/* 길찾기 */}
-				{/* {
+				{
 					courseList &&
 					<DirectionsService
         	  // required
@@ -183,9 +183,9 @@ function MapRender(props) {
         	    console.log('DirectionsService onUnmount directionsService: ', directionsService)
         	  }}
         	/>
-				} */}
+				}
 				{/* 길찾기 소요 시간 */}
-				{/* {
+				{
 					courseList &&
 					<DistanceMatrixService
 						options={{
@@ -201,9 +201,9 @@ function MapRender(props) {
 						}}
 						callback={(res, status) => distanceCallback(res, status, setCourseList)}
 					/>
-				} */}
+				}
 				{/* 길찾기 렌더링 */}
-				{/* {
+				{
 					direction &&
 					<DirectionsRenderer
 						options={{
@@ -211,7 +211,7 @@ function MapRender(props) {
 						}}
 						// onLoad={() => {setDirection(null)}}
 					/>
-				} */}
+				}
 			</GoogleMap>
 		</div>
 	)
