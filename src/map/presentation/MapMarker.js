@@ -32,6 +32,8 @@ function MapMarker(props) {
 				props.kculter &&
 				props.kculter.place &&
 				<CustomMarker
+					map={props.map}
+					google={props.google}
 					place={props.kculter.place}
 					pin={props.kculter.pin}
 					title={window.sessionStorage.getItem("title")}

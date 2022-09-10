@@ -38,7 +38,7 @@ function CustomMarker(props) {
 						lng: item.lng
 					}}
 					onClick={() => {
-						props.markerHandler(item, props.title, props.setCenter, props.setZoom, props.dispatch, props.pin.imageUrl);
+						props.markerHandler(item, props.title, props.setCenter, props.setZoom, props.dispatch, props.pin.imageUrl, props.map, props.google);
 					}}
 				/>
 			);

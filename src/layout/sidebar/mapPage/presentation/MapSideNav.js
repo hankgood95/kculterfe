@@ -39,13 +39,13 @@ function MapSideNav(props) {
 						address={place.address}
 						explain={place.explain}
 					/>
-					{
+					{/* {
 						place.phone_num &&
 						<div className="phone-num">
 							<p>Phone Number</p>
 							<p>{place.phone_num}</p>
 						</div>
-					}
+					} */}
 					{
 						place.photos &&
 						<div className="map-sidebar-photos">
@@ -53,8 +53,9 @@ function MapSideNav(props) {
 								<p>Photos</p>
 							</div>
 							<div className="photos-content">
-								{place.photos.map((item) => 
+								{place.photos.map((item, index) => 
 										<img className="photos-item"
+											key={index}
 											src={item.getUrl()}
 											alt={place.name}
 										/>

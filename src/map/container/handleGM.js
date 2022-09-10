@@ -1,6 +1,8 @@
 import axios from 'axios';
 import {
-	handleGoogleMarkerAndSearch
+	handleCustomMarker,
+	handleGoogleMarkerAndSearch,
+	handleOnLoadKculter
 } from './handleOnMarker';
 import {
 	CLEAR_COURSE,
@@ -42,7 +44,7 @@ export function getConcertPlaceData(concert, map, google, setCenter, setZoom, di
 	if (!concert.lat && !concert.lng) {
 		return;
 	}
-	axios.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + concert.lat + "," + concert.lng + "&radius=10&key=AIzaSyACbIPocp-CLvcsG7CyYmV69q1Vp6k7vf0")
+	axios.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + concert.lat + "," + concert.lng + "&radius=10&key=" + process.env.REACT_APP_GOOGLE_MAP_KEY)
 	.then(res => {
 		const placeId = res.data.results[0].place_id;
 		const service = new window.google.maps.places.PlacesService(map);
@@ -71,9 +73,44 @@ export function getConcertPlaceData(concert, map, google, setCenter, setZoom, di
 		console.log(error);
 	})
 }
+
+export function getKculterPlaceData(kculter, map, google, setCenter, setZoom, dispatch, pin) {
+	if (!kculter || !kculter.length) {
+		return;
+	}
+	axios.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + kculter[0].lat + "," + kculter[0].lng + "&radius=10&key=" + process.env.REACT_APP_GOOGLE_MAP_KEY)
+	.then(res => {
+		const placeId = res.data.results[0].place_id;
+		const service = new window.google.maps.places.PlacesService(map);
+		const request = {
+			placeId: placeId,
+			fields: [
+				"formatted_address",
+				"international_phone_number",
+				"name",
+				"photos",
+				"geometry"
+			],
+		};
+		service.getDetails(request, (placeData, status) => {
+			if (
+				status === google.maps.places.PlacesServiceStatus.OK &&
+				placeData &&
+				placeData.geometry &&
+				placeData.geometry.location
+				) {
+					handleOnLoadKculter(kculter[0], placeData, window.sessionStorage.getItem("title"), pin.imageUrl, setCenter, setZoom, dispatch);
+				}
+		})
+	})
+	.catch(error => {
+		console.log(error);
+	})
+}
 	
-	export function handleOnLoad(map, setMap, concert, google, setCenter, setZoom, dispatch, url, setNear) {
+export function handleOnLoad(map, setMap, kculter, concert, google, setCenter, setZoom, dispatch, url, setNear, pin) {
 	setMap(() => map);
+	getKculterPlaceData(kculter, map, google, setCenter, setZoom, dispatch, pin);
 	getConcertPlaceData(concert, map, google, setCenter, setZoom, dispatch);
 	handleOnDragEndGM(map, url, setNear);
 }
@@ -106,7 +143,7 @@ export function handleOnDragEndGM(map, url, setNear) {
 	if (!map || !url) {
 		return;
 	}
-	axios.defaults.baseURL = 'http://3.37.88.220:8080';
+	axios.defaults.baseURL = 'http://kculter-lb-1250111111.ap-northeast-2.elb.amazonaws.com';
 	axios.get(url + map.getCenter().lat() + '&lng=' + map.getCenter().lng())
 	.then(function(res){
 		const data = res.data.map((item) => {
