@@ -62,8 +62,21 @@
   margin: auto;
 }
 
+.map-sidebar .place .story-content h6 {
+	font-size: large;
+	font-weight: bold;
+}
+
 .map-sidebar .place .story-content p {
   font-size: small;
+}
+
+.map-sidebar .phone-num {
+	margin-bottom: 16px;
+}
+
+.map-sidebar .phone-num p {
+	margin: 0;
 }
 
 .map-sidebar .map-sidebar-photos {

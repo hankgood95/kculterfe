@@ -11,6 +11,7 @@ const initState = {
 		name: "",
 		phone_num: "",
 		photos: [],
+		stayPhotos: [],
 		reviews: [],
 		memberHash: 0,
 		lat: 0,

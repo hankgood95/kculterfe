@@ -41,7 +41,8 @@ function MapSideNav(props) {
 					/>
 					{
 						place.phone_num &&
-						<div>
+						<div className="phone-num">
+							<p>Phone Number</p>
 							<p>{place.phone_num}</p>
 						</div>
 					}
@@ -55,6 +56,22 @@ function MapSideNav(props) {
 								{place.photos.map((item) => 
 										<img className="photos-item"
 											src={item.getUrl()}
+											alt={place.name}
+										/>
+								)}
+							</div>
+						</div>
+					}
+					{
+						place.stayPhotos &&
+						<div className="map-sidebar-photos">
+							<div className="photos-title">
+								<p>Photos</p>
+							</div>
+							<div className="photos-content">
+								{place.stayPhotos.map((item) => 
+										<img className="photos-item"
+											src={item.image}
 											alt={place.name}
 										/>
 								)}
