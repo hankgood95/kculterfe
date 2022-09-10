@@ -13,7 +13,11 @@ export function handleOnClickAdd(place, courseList, setCourseList, dispatch) {
 		return;
 	}
 	let newCourseList = [...courseList];
-	newCourseList.push(place);
+	const newPlace = {
+		...place,
+		photos: null,
+	}
+	newCourseList.push(newPlace);
 	setCourseList(() => newCourseList);
 	dispatch({
 		type: MODIFY_COURSE,

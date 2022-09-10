@@ -49,6 +49,8 @@ function MapMarker(props) {
 			{
 				course.place &&
 				<CustomMarker
+					map={props.map}
+					google={props.google}
 					place={course.place}
 					pin={course.pin}
 					title={"COURSE"}
