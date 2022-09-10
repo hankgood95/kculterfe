@@ -4,12 +4,15 @@ import '../style/MapPage.css';
 
 
 function CustomArrowPrev(props) {
+	let onClick = null;
+	if (props.sliderRef &&
+			props.sliderRef.current &&
+			props.sliderRef.current.slickPrev) {
+				onClick = props.sliderRef.current.slickPrev;
+	}
 	return (
-		props.sliderRef &&
-		props.sliderRef.current &&
-		props.sliderRef.current.slickPrev &&
 		<button className='arrow'
-			onClick={props.sliderRef.current.slickPrev}
+			onClick={onClick}
 		>
 			<FaAngleDoubleRight
 			className='Fa-Double'

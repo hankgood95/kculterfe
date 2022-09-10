@@ -3,12 +3,15 @@ import {FaAngleDoubleLeft, FaAngleDoubleRight} from "react-icons/fa";
 import '../style/MapPage.css';
 
 function CustomArrowNext(props) {
+	let onClick = null;
+	if (props.sliderRef &&
+			props.sliderRef.current &&
+			props.sliderRef.current.slickPrev) {
+				onClick = props.sliderRef.current.slickPrev;
+	}
 	return (
-		props.sliderRef &&
-		props.sliderRef.current &&
-		props.sliderRef.current.slickNext &&
 		<button className='arrow'
-			onClick={props.sliderRef.current.slickNext}
+			onClick={onClick}
 		>
 			<FaAngleDoubleRight
 				className='Fa-Double'
