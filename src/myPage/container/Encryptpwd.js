@@ -1,6 +1,7 @@
 import cryptoJS from 'crypto-js'
 
 export function hashPwd(info) {
+  axios.defaults.baseURL = 'http://3.37.88.220:8080';
   
   const secretKey = process.env.REACT_APP_AES_SECRET_KEY;
   const iv = 'abcdefghijklmnop';
