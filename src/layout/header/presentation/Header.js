@@ -15,6 +15,7 @@ import './Header.css';
 import map from '../../../src_asset/map.svg';
 import mypage from '../../../src_asset/gear.svg';
 import noImage from '../../../src_asset/no_img.png';
+import concertImg from '../../../src_asset/ticket-detailed.svg';
 
 function Header(props) {
 	const location = useLocation();
@@ -41,7 +42,7 @@ function Header(props) {
 			setImg((img) => "https://i.pinimg.com/originals/7f/b0/c9/7fb0c94c6252c18e16ec4bde430cdf2b.png");
 		} else if (location.pathname == "/IdolListPage" && concertSelected) {
 			setTitle((title) => "Concert");
-			setImg((img) => "https://i.pinimg.com/originals/7f/b0/c9/7fb0c94c6252c18e16ec4bde430cdf2b.png");
+			setImg((img) => concertImg);
 		} else if (location.pathname == "/Mypage" && dashboardSelected) {
 			setTitle((title) => "Dashboard");
 			setImg((img) => mypage);
@@ -63,8 +64,12 @@ function Header(props) {
 			<div className='left'>
 				<OffCanvasSidebar isOpen={isOpen} sideClose={sideClose} handleOpen={handleOpen}/>
 				<img
+					className='pageIcon'
 					src={img}
 					alt='logo'
+					onClick={() => {
+						setOpen(!isOpen);
+					}}
 				/>
 				<p className='title'>
 					{title}
@@ -79,10 +84,7 @@ function Header(props) {
 						/>
 					</button>
 				</Link>
-				<i className="bi bi-list"
-					onClick={() => {
-						setOpen(!isOpen);
-					}}/>
+				{/* <i className="bi bi-list"/> */}
 			</div>
 		</header>
 	);
