@@ -16,6 +16,7 @@ function useFocusOn(place, setCenter, setZoom, dispatch) {
 }
 
 export function handleCard(data, head, setCenter, setZoom, dispatch, pin) {
+	console.log("Card", data);
 	const place = {
 		head: head,
 		imageUrl: pin,
@@ -27,6 +28,9 @@ export function handleCard(data, head, setCenter, setZoom, dispatch, pin) {
 		name: data.title,
 		lat: Number(data.mapy),
 		lng: Number(data.mapx),
+		phone_num: data.tel,
+		photos: null,
+		reviews: null,
 		placeHash: "0",
 		placeType: 0,
 		status: 0,
@@ -35,6 +39,7 @@ export function handleCard(data, head, setCenter, setZoom, dispatch, pin) {
 }
 
 export function handleCustomMarker(data, head, setCenter, setZoom, dispatch, pin) {
+	console.log("CM", data);
 	const place = {
 		head: head,
 		imageUrl: pin,
@@ -46,6 +51,9 @@ export function handleCustomMarker(data, head, setCenter, setZoom, dispatch, pin
 		name: data.name,
 		lat: data.lat,
 		lng: data.lng,
+		phone_num: "",
+		photos: [],
+		reviews: [],
 		placeHash: data.placeHash,
 		placeType: data.placeType,
 		status: data.status,
@@ -54,6 +62,7 @@ export function handleCustomMarker(data, head, setCenter, setZoom, dispatch, pin
 }
 
 export function handleGoogleMarkerAndSearch(data, head, setCenter, setZoom, dispatch) {
+	console.log("GM n Search", data);
 	const place = {
 		head: head,
 		imageUrl: data.imageUrl,
@@ -65,6 +74,9 @@ export function handleGoogleMarkerAndSearch(data, head, setCenter, setZoom, disp
 		name: data.name,
 		lat: 0,
 		lng: 0,
+		phone_num: data.international_phone_number,
+		photos: data.photos,
+		reviews: data.reviews,
 		placeHash: "0",
 		placeType: 0,
 		status: 0,

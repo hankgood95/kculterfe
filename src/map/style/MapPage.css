@@ -4,35 +4,6 @@
   height: 100%;
 }
 
-.map-card-container {
-	position: absolute;
-  align-items: center;
-  height: 250px;
-  width: 100%;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.card-toggle-container {
-  display: flex;
-	font-size: 12px;
-	width: 50%;
-	height: 60px;
-	align-items: center;
-	justify-content:center;
-	margin-bottom: 10px;
-	padding-right: 30px;
-}
-
-.map-card {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 150px;
-  width: 100%;
-}
-
 .card-toggle-container p {
 	margin: 0;
 }
@@ -87,92 +58,238 @@
   align-self: center;
 }
 
-.card-item {
-  display: flex;
-  justify-content: center;
-	width: 150px;
+@media (max-width: 450px) {
+	.autocomplete-input {
+		position: absolute;
+		top: 30px;
+		left: 30px;
+		width: 150px;
+		height: 32px;
+		border: 1px solid transparent;
+		font-family: inherit;
+		border-radius: 8px;
+		box-shadow: 5px 5px 10px gray;
+		font-size: 14px;
+		text-overflow: ellipses;
+		padding-left: 40px;
+		border-color: #0074ff;
+		background-color: white;
+		color: black;
+		background-image: url("https://i.imgur.com/VbBlOIf.png");
+		background-size: 1rem;
+		background-repeat: no-repeat;
+		background-position: 10px center;
+		outline: none;
+	}
+
+	.autocomplete-input input {
+		padding-left: 2rem;
+	}
+
+	.map-filter-container {
+		position: absolute;
+		top: 30px;
+		right: 30px;
+	}
+	
+	.filter {
+		appearance : none;
+		-o-appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		font-family: inherit;
+		width: 150px;
+		height: 32px;
+		border-radius: 8px;
+		border: 1px solid #cccccc;
+		box-shadow: 5px 5px 10px gray;
+		font-size: 14px;
+		text-overflow: ellipses;
+		padding-left: 10px;
+		padding-right: 25px;
+		background: url('../../src_asset/drop_down.png') no-repeat 95% 50%/15px auto;
+		background-color: white;
+	}
+
+	.map-card-container {
+		position: absolute;
+		align-items: center;
+		height: 200px;
+		width: 100%;
+		top: 65%;
+		left: 50%;
+		transform: translate(-50%);
+	}
+
+	.card-toggle-container {
+		display: flex;
+		font-size: 12px;
+		width: 50%;
+		height: 50px;
+		align-items: center;
+		justify-content:center;
+		margin-bottom: 10px;
+		padding-right: 30px;
+	}
+
+	.map-card {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		height: 140px;
+		width: 100%;
+	}
+
+	.card-item {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+	}
+
+	.card-item button {
+		width: 100%;
+		height: 100%;
+		margin-bottom: 5px;
+		margin-right: 5px;
+		background-color: white;
+		border: rgba(0, 0, 0, 0);
+		border-radius: 8px;
+		box-shadow: 5px 5px 10px gray;
+		overflow-y: hidden;
+	}
+
+	.card-item button img {
+		width: 100%;
+		height: 80%;
+		margin-top: 5px;
+		border-radius: 8px;
+	}
+	
+	.card-item p {
+		font-size: x-small;
+		height: 20%;
+		margin: 0;
+	}
 }
 
-.card-item button {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 5px;
-  margin-right: 5px;
-  background-color: white;
-  border: rgba(0, 0, 0, 0);
-  border-radius: 8px;
-  box-shadow: 5px 5px 10px gray;
-  overflow-y: hidden;
-}
+@media (min-width: 450px) {
+	.autocomplete-input {
+		position: absolute;
+		top: 30px;
+		left: 30px;
+		width: 200px;
+		height: 32px;
+		border: 1px solid transparent;
+		font-family: inherit;
+		border-radius: 8px;
+		box-shadow: 5px 5px 10px gray;
+		font-size: 14px;
+		text-overflow: ellipses;
+		padding-left: 40px;
+		border-color: #0074ff;
+		background-color: white;
+		color: black;
+		background-image: url("https://i.imgur.com/VbBlOIf.png");
+		background-size: 1rem;
+		background-repeat: no-repeat;
+		background-position: 10px center;
+		outline: none;
+	}
 
-.card-item button img {
-  width: 100%;
-  height: 80%;
-  margin-top: 5px;
-  border-radius: 8px;
-}
+	.autocomplete-input input {
+		padding-left: 2rem;
+	}
 
-.card-item p {
-  height: 20%;
-  margin: 0;
-}
+	.map-filter-container {
+		position: absolute;
+		top: 30px;
+		right: 30px;
+	}
+	
+	.filter {
+		appearance : none;
+		-o-appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		font-family: inherit;
+		width: 200px;
+		height: 32px;
+		border-radius: 8px;
+		border: 1px solid #cccccc;
+		box-shadow: 5px 5px 10px gray;
+		font-size: 14px;
+		text-overflow: ellipses;
+		padding-left: 10px;
+		padding-right: 25px;
+		background: url('../../src_asset/drop_down.png') no-repeat 95% 50%/15px auto;
+		background-color: white;
+	}
 
-.autocomplete-input {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  width: 200px;
-  height: 32px;
-  border: 1px solid transparent;
-	font-family: inherit;
-  border-radius: 8px;
-  box-shadow: 5px 5px 10px gray;
-  font-size: 14px;
-  text-overflow: ellipses;
-	padding-left: 40px;
-  border-color: #0074ff;
-  background-color: white;
-  color: black;
-	background-image: url("https://i.imgur.com/VbBlOIf.png");
-  background-size: 1rem;
-	background-repeat: no-repeat;
-  background-position: 10px center;
-  outline: none;
-}
+	.map-card-container {
+		position: absolute;
+		align-items: center;
+		height: 250px;
+		width: 100%;
+		top: 65%;
+		left: 50%;
+		transform: translate(-50%);
+	}
 
-.autocomplete-input input {
-  padding-left: 2rem;
+	.card-toggle-container {
+		display: flex;
+		font-size: 12px;
+		width: 50%;
+		height: 60px;
+		align-items: center;
+		justify-content:center;
+		margin-bottom: 10px;
+		padding-right: 30px;
+	}
+
+	.map-card {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		height: 150px;
+		width: 100%;
+	}
+
+	.card-item {
+		display: flex;
+		justify-content: center;
+		width: 150px;
+	}
+
+	.card-item button {
+		width: 100%;
+		height: 150px;
+		margin-bottom: 5px;
+		margin-right: 5px;
+		background-color: white;
+		border: rgba(0, 0, 0, 0);
+		border-radius: 8px;
+		box-shadow: 5px 5px 10px gray;
+		overflow-y: hidden;
+	}
+
+	.card-item button img {
+		width: 100%;
+		height: 80%;
+		margin-top: 5px;
+		border-radius: 8px;
+	}
+	
+	.card-item p {
+		height: 20%;
+		margin: 0;
+	}
 }
 
 .search-box {
   background-color: #949ba0;
   height: 40px;
   padding: 10px;
-}
-
-.map-filter-container {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-}
-
-.filter {
-	appearance : none;
-	-o-appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-	font-family: inherit;
-	width: 200px;
-	height: 32px;
-	border-radius: 8px;
-	border: 1px solid #cccccc;
-	box-shadow: 5px 5px 10px gray;
-	font-size: 14px;
-	text-overflow: ellipses;
-	padding-left: 10px;
-	padding-right: 25px;
-	background: url('../../src_asset/drop_down.png') no-repeat 95% 50%/15px auto;
-	background-color: white;
 }
 
 .filter-toggle-container {

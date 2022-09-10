@@ -87,11 +87,12 @@ export function handleOnClickGM(map, e, google, setCenter, setZoom, dispatch) {
 	const request = {
 		placeId: e.placeId,
 		fields: [
-			"formatted_address",
-			"international_phone_number",
-			"name",
-			"photos",
-			"geometry"
+			// "formatted_address",
+			// "international_phone_number",
+			// "name",
+			// "photos",
+			// "geometry"
+			"ALL"
 		],
 	};
 	service.getDetails(request, (placeData, status) => {

@@ -40,6 +40,28 @@ function MapSideNav(props) {
 						explain={place.explain}
 					/>
 					{
+						place.phone_num &&
+						<div>
+							<p>{place.phone_num}</p>
+						</div>
+					}
+					{
+						place.photos &&
+						<div className="map-sidebar-photos">
+							<div className="photos-title">
+								<p>Photos</p>
+							</div>
+							<div className="photos-content">
+								{place.photos.map((item) => 
+										<img className="photos-item"
+											src={item.getUrl()}
+											alt={place.name}
+										/>
+								)}
+							</div>
+						</div>
+					}
+					{
 						!concert.lat &&
 						!concert.lng &&
 						<CourseBox
