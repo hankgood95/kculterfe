@@ -27,6 +27,7 @@
 }
 
 .concert_explain {
+	font-weight: 500;
 	margin-top: 10px;
 	white-space: pre-wrap;
 }
