@@ -4,26 +4,32 @@
 
 .ConcertSearchBar{
 	display:flex;
-	justify-content: flex-start;
+	justify-content: left;
 	margin-top: 1rem;
 	margin-left: 2rem;
 	margin-right: 2rem;
 }
 
-.IdolSelect{
+/* .IdolSelect{
 	margin-top: 1rem;
 	margin-left: 2rem;
 	margin-right: 2rem;
-}
+} */
 
 .CardContainer{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+	padding: 10px;
 }
 
 .CardDiv{
 	display: 0;
 	float: left;
+	margin-bottom: 10px;
+}
+
+@media (max-width: 950px) {
+	.ConcertSearchBar { justify-content: centet; }
 }
 
 @media (min-width: 800px) {
@@ -31,5 +37,12 @@
 }
 
 @media (min-width: 1000px) {
-	.CardContainer { grid-template-columns: repeat(4, 1fr); }
+	.ConcertSearchBar { margin-left: 4rem;}
+	.CardContainer { 
+		grid-template-columns: repeat(4, 1fr); 
+		padding-right: 2rem;
+	}
+	.CardDiv {
+		margin-left: 2rem;
+	}
 }
