@@ -64,6 +64,7 @@ function CardItem(item) {
 																		keyHash: item.starHash,
 																		lat: item.lat,
 																		lng: item.lng,
+																		img: item.img,
 																	}
 																})
 															}}>

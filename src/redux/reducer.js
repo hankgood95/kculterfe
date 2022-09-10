@@ -27,8 +27,9 @@ const initState = {
 		keyHash: 0,
 		lat: 0,
 		lng: 0,
+		img: "",
 	},
-	courseList: [],
+	// courseList: null,
 }
 
 // 액션 추가 여기
@@ -47,7 +48,7 @@ export const SET_KCULTER_PLACE = 'SET_KCULTER_PLACE';
 export const SET_PIN = 'SET_PIN';
 export const MAP_IN_CONCERT = 'MAP_IN_CONCERT';
 export const CLEAR_MAP_CONCERT = 'CLEAR_MAP_CONCERT';
-export const GET_DIRECTION = 'GET_DIRECTION';
+// export const GET_DIRECTION = 'GET_DIRECTION';
 
 // reducer
 export default function reducer(state = initState, action) {
@@ -128,11 +129,11 @@ export default function reducer(state = initState, action) {
 				...state,
 				mapConcert: action.data,
 			}
-		case GET_DIRECTION:
-			return {
-				...state,
-				courseList: action.data,
-			}
+		// case GET_DIRECTION:
+		// 	return {
+		// 		...state,
+		// 		courseList: action.data,
+		// 	}
 		default:
 			return state;
 	}

@@ -30,7 +30,7 @@
 	align-items: center;
   margin-top: 15px;
   margin-bottom: 15px;
-	margin-right: 30px;
+	/* margin-right: 30px; */
 }
 
 .map-sidebar .head img {
@@ -40,7 +40,7 @@
 }
 
 .map-sidebar .head p {
-	font-size: 40px;
+	font-size: 30px;
 	margin: 0;
 }
 
@@ -50,7 +50,7 @@
 
 .map-sidebar .place-img {
   width: 100%;
-  height: 250px;
+  height: 320px;
 }
 
 .map-sidebar .place .story-container {
@@ -168,6 +168,46 @@
   font-weight: bold;
 }
 
-.modal{
+.mmodal{
+  display: flex;
+}
+
+.course-modal{
+  align-self: center;
+  padding: 90px 40px 50px 40px;
+  background-color: #fff;
+  width: 40vw;
+  border-radius: 13px;
+}
+.course-modal form{
+  position: relative;
+  top:90px;
+}
+
+.course-modal input {
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 15px;
   padding: 10px 10px;
+  border-color: #0076ff;
+}
+
+.course-modal button{
+  color: #fff;
+  margin: 0px 10px;
+  background-color: #0076ff;
+  font-weight: bold;
+  border-style: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  right: 10px;
+  position: relative;
+}
+
+.modalspan{
+  font-weight: bold;
+  position: relative;
+  font-size: 50px;
+  color: #1755d0;
+  line-height: 60px;
 }

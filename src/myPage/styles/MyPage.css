@@ -11,7 +11,8 @@
 		margin-left: 4rem;
 		padding-right: 1rem;
 		overflow: auto;
-		height: 45rem;
+		height: 75vh;
+		/* position: relative; */
 	}
 }
 
@@ -78,6 +79,7 @@
 /* day 카드 오른쪽 */
 #my-body .box-card-item .right {
 	background-color: white;
+	position: relative;
 }
 
 /* 장소 카드 전체 감싸는 부분 */

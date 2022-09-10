@@ -1,4 +1,7 @@
 import React from 'react';
+import {FaAngleDoubleLeft, FaAngleDoubleRight} from "react-icons/fa";
+import '../style/MapPage.css';
+
 
 function CustomArrowPrev(props) {
 	return (
@@ -8,8 +11,10 @@ function CustomArrowPrev(props) {
 		<button className='arrow'
 			onClick={props.sliderRef.current.slickPrev}
 		>
-			<img
-				src={"http://cdn.onlinewebfonts.com/svg/img_92254.png"}
+			<FaAngleDoubleRight
+			className='Fa-Double'
+			id='Fa-Doublee'
+			size="40"
 				alt={"prev arrow"}
 				style={{
 					transform: "scaleX(-1)",
