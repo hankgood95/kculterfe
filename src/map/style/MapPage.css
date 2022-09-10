@@ -103,6 +103,8 @@
 		border-radius: 8px;
 		border: 1px solid #cccccc;
 		box-shadow: 5px 5px 10px gray;
+    border-color: #0074ff;
+    color: #949ba0;
 		font-size: 14px;
 		text-overflow: ellipses;
 		padding-left: 10px;
@@ -217,6 +219,8 @@
 		height: 32px;
 		border-radius: 8px;
 		border: 1px solid #cccccc;
+    color: #949ba0;
+    border-color: #0074ff;
 		box-shadow: 5px 5px 10px gray;
 		font-size: 14px;
 		text-overflow: ellipses;
@@ -239,7 +243,7 @@
 	.card-toggle-container {
 		display: flex;
 		font-size: 12px;
-		width: 50%;
+		width: 29%;
 		height: 60px;
 		align-items: center;
 		justify-content:center;
