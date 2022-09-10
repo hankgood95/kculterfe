@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/**
- * @param (rgb) color
- * @param (bool) disabled
- * @param (string) text
- * */ 
 function ColorButton(props) {
     const CheckButton = styled.button`
         padding: 7px 20px;

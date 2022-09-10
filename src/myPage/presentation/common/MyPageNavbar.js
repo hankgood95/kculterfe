@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NonceProvider } from 'react-select';
 import styled from 'styled-components';
 
 function MyPageNavbar( props ) {
@@ -9,7 +10,7 @@ function MyPageNavbar( props ) {
         <>
             <BodyNavbar>
                 <NavBtn select={firstPage} onClick={() => {props.setLikeList(true); setFirstPage(true); setSecondPage(false)}}>{props.firstPageName}</NavBtn>
-                <NavBtn select={secondPage} onClick={() => {props.setLikeList(false); setFirstPage(false); setSecondPage(true)}}>{props.secondPageName}</NavBtn>
+                <NavBtn select={secondPage} check={props.secondPageName} onClick={() => {props.setLikeList(false); setFirstPage(false); setSecondPage(true)}}>{props.secondPageName}</NavBtn>
             </BodyNavbar>
         </>
     )
@@ -30,7 +31,7 @@ const BodyNavbar = styled.div`
     }
 
     @media all and (max-width:767px) {
-        font-size: 1rem;
+        font-size: 1.5rem;
         background-color: #eeeeee;
         border-bottom: 1px solid rgba(128, 128, 128, 0.401);
         margin-left: 3rem;
@@ -45,6 +46,7 @@ const NavBtn = styled.button`
     margin-right: 2rem;
     margin-left: 2rem;
     border: 0px;
+    display: ${props => props.check === 'empty' ? 'none' : 'visible'};
     ${props => {
         if (props.select === true) {
             return`

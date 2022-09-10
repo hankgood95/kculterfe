@@ -12,7 +12,6 @@ import { Modal } from 'react-bootstrap';
 
 
 function BoxCardItem({ props, dayNum }) {
-    // Modal 상태 변수
     const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
@@ -38,7 +37,7 @@ function BoxCardItem({ props, dayNum }) {
 		.then(() => {
 			alert("Success on delete")
             setShow(false);
-            window.location.reload(); // 여기 페이지 재 렌더링이 잘 안된다?
+            window.location.reload();
 		})
 		.catch(err => {
             alert("Can not delete")
@@ -112,7 +111,7 @@ const ConfirmBtn = styled.button`
     padding: 7px 20px;
     border: none;
     color: #fff;
-    background-color: ${props => props.color == 'pink' ? pink : blue};
+    background-color: ${props => props.color === 'pink' ? pink : blue};
     border-radius: 10px;
     left: 73%;
     bottom: 2%;
