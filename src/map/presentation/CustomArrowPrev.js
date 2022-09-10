@@ -13,6 +13,7 @@ function CustomArrowPrev(props) {
 		>
 			<FaAngleDoubleRight
 			className='Fa-Double'
+			id='Fa-Doublee'
 			size="40"
 				alt={"prev arrow"}
 				style={{

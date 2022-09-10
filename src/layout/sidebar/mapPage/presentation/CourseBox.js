@@ -69,6 +69,7 @@ function CourseBox({ place }) {
       		</button>
 				}
 			</div>
+			<div className='mmodal'>
 				<Modal
 					isOpen={modalIsOpen}
 					ariaHideApp={false}
@@ -98,6 +99,7 @@ function CourseBox({ place }) {
 						</button>
 					</form>
 				</Modal>
+				</div>
 				</div>
 	);
 }
