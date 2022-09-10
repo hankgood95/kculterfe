@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 function StoreData(props){
 
-    const BASE_URL = "http://3.37.88.220:8080";
+    axios.defaults.baseURL = 'http://3.37.88.220:8080';
 
     const check = (event) => {
         event.preventDefault();

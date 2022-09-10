@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 function GetListData(props){
 
+    axios.defaults.baseURL = 'http://3.37.88.220:8080';
     let navigate = useNavigate();
 
     const getList = () => {

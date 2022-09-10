@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export async function getCultureList() {
+    axios.defaults.baseURL = 'http://3.37.88.220:8080';
     let list;
     //await 한 값을 보내준다.
     return await axios.get('/cultures')
