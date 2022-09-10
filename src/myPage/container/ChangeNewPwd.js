@@ -2,9 +2,11 @@ import axios from 'axios';
 import {hashPwd} from '../../login/presentation/Encryptpwd'
 
 export async function  ChangeNewPwd(newPwd) {
+    axios.defaults.baseURL = 'http://3.37.88.220:8080';
+
     const hash = hashPwd(sessionStorage.getItem("memberHash")+newPwd);
     let result;
-    return await axios.put("/member/pwd",null,{ //put method 에서 header는 세번째 인자로 들어가야 한다.
+    return await axios.put("/member/pwd",null,{
         headers: {
             Authorization:hash
         }
@@ -14,6 +16,7 @@ export async function  ChangeNewPwd(newPwd) {
         return result;        
     })
     .catch(function(error){
+        console.log(error);
         result = 500;
         return result;
     })

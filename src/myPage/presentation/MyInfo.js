@@ -8,9 +8,7 @@ function MyInfo() {
 
   return(
       <div id='my-body'>
-          {/* 저장한 경로와 좋아요 리스트 선택 경로 네비 */}
           <MyPageNavbar setLikeList={setSecurity} firstPageName="Info" secondPageName="Security"/>
-          {/* 저장한 경로 리스트 */}
           { viewInfo ? <BasicInfoPage/> : <PwdInfoPage/> }
       </div>
   )

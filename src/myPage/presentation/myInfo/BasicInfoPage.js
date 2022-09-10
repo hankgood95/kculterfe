@@ -10,26 +10,22 @@ import ColorButton from '../common/ColorButton';
 import InfoContainer from '../common/InfoContainer';
 
 export default function EditBasicInfo() {
-  const [nickName, setNickName] = useState(''); // 닉네임
-  const [countryCode, setCountryCode] = useState('') // 나라 코드
-  const [countryLabel, setCountryLabel] = useState('') // 나라 이름
-  const [countryDefault, setCountryDefault] = useState('') // 나라 초기값
-  const [gender,setGender] = useState(''); // 성별
-  const [pfImg, setPfImg] = useState(''); // 프로필 사진
-  const [pfImgPr, setPfImgPr] = useState(''); // 프로필 미리보기 사진
+  const [nickName, setNickName] = useState('');
+  const [countryCode, setCountryCode] = useState('');
+  const [countryLabel, setCountryLabel] = useState('');
+  const [countryDefault, setCountryDefault] = useState('');
+  const [gender,setGender] = useState('');
+  const [pfImg, setPfImg] = useState('');
+  const [pfImgPr, setPfImgPr] = useState('');
 
   const [memberInfo, setMemberInfo] = useState([]);
 
-  /*오류메세지*/
   const [nickNameMessage, setnickNameMessage] = useState('');
 
-  /*유효성 검사*/
   const [isNickName, setIsNickName] = useState(false);
 
-    // 값이 수정되어 버튼 활성화 위해
   const [checkAbled, setCheckAbled] = useState(false);
 
-  /*체크 버튼 disabled만들기 위해 */
   const [NickNameBtDis, setNicNameBtDis] = useState(true);
   const [checkDefaultGender, setCheckDefaultGender] = useState(false);
 
@@ -39,17 +35,13 @@ export default function EditBasicInfo() {
       setMemberInfo(resData)
       setPfImgPr(resData.pfUrl);
 
-      // gender 체크
-      if (resData.gender == "female") {
+      if (resData.gender === "female") {
         setCheckDefaultGender(false);
       }
       else {
         setCheckDefaultGender(true);
       }
 
-        // 값이 안찍힘 진짜 왜이라냐~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // useState 값을 set 으로 변경하면 렌더링이 되야 하나? 약간 그 순서가 있는듯 아직 모르겠, 여기 안에 넣어서 해결!!!!
-        // 동기 비동기 문제
       const code = resData.countryCode;
       setCountryDefault(countryList().getLabel(code));
     })
@@ -58,12 +50,11 @@ export default function EditBasicInfo() {
     })
   },[]);
 
-  // 사진 파일 변경
   const onChangeProfilImg = (e) => {
     e.preventDefault();
     const imgUrl = e.target.files[0];
     const imgUrlPr = e.target.files[0];
-    var reader = new FileReader(); // fakepath 보안을 피하기 위해
+    var reader = new FileReader();
 
     if (imgUrl == null) {
       setCheckAbled(false);
@@ -80,7 +71,6 @@ export default function EditBasicInfo() {
     }
   }
 
-  // 닉네임 변경
   const onChangeNickName = (e) => {
     let regExp = /[^a-zA-Z]/g
     const nickNameRegex = e.target.value;
@@ -104,7 +94,6 @@ export default function EditBasicInfo() {
     }
   }
 
-  //닉네임 중복검사
   const nicknamedupli = async () => {
     const result = await checkNick(nickName);
     if(result > 0){
@@ -116,7 +105,6 @@ export default function EditBasicInfo() {
     }
   }
 
-  /* 나라선택 */
   const options = useMemo(() => countryList().getData(), []);
 
   const changeHandler = value => {
@@ -125,22 +113,20 @@ export default function EditBasicInfo() {
     setCheckAbled(true);
   }
 
-  // 기본 정보 수정 버튼
   const editMember = async () => {
     var gender_ = gender;
     var countryCode_ = countryCode;
     var nickName_ = nickName;
 
-    if (nickName == ''){ nickName_ = memberInfo.nickName; } // 현재 닉네임과 동일하게 해야함.
-    if (gender == '') { gender_ = memberInfo.gender; }
-    if (countryCode == '') { countryCode_ = memberInfo.countryCode; }
+    if (nickName === ''){ nickName_ = memberInfo.nickName; }
+    if (gender === '') { gender_ = memberInfo.gender; }
+    if (countryCode === '') { countryCode_ = memberInfo.countryCode; }
 
     const memberNumHash = window.sessionStorage.getItem("memberHash")
 
     const formData = {
       memberNumHash: memberNumHash,
       nickName : nickName_,
-      // 여기서 밑에 두 변수는 useState 변하고 값이 안들어 와서 따로 지역 변수로 선언해줌(다른 분들에게 물어봐야할 듯)
       countryCode : countryCode_,
       gender : gender_,
     }
@@ -155,9 +141,9 @@ export default function EditBasicInfo() {
     fmd.append('file', pfImg);
 
     const result = await EditMemberInfo(fmd);
-    if(result == 200){
+    if(result === 200){
       alert("Success on edit");
-      window.location.reload(); // 여기서 "/myPage" 로 이동하면 css 가 깨진다? 리로드 하면 괘찮
+      window.location.reload();
       return 0;
     }
     else{
@@ -168,7 +154,6 @@ export default function EditBasicInfo() {
   return (
     <InfoContainer color={blue} id="my-info">
       <Form>
-        {/* 사진 업로드 */}
         <Form.Group className='mb-4'>
           <InfoText>Photo</InfoText>
           <div className='text-center'>
@@ -177,7 +162,6 @@ export default function EditBasicInfo() {
           <Form.Control accept="image/jpg, image/png, image/jpeg" onChange={onChangeProfilImg} type="file" />
         </Form.Group>
 
-        {/* 닉네임 */}
         <Form.Group className="mb-4" controlId="formBasicEmail">
           <InfoText>Nick-Name</InfoText>
           <Form.Control type="text" placeholder="Enter Your NickName" onChange={onChangeNickName} defaultValue={memberInfo.nickName} />
@@ -187,7 +171,6 @@ export default function EditBasicInfo() {
           </div>
         </Form.Group>
 
-        {/* 나라 */}
         <Form.Group className="mb-4" controlId="formBasicPassword">
           <InfoText>Contury</InfoText>
           <Select 
@@ -197,7 +180,6 @@ export default function EditBasicInfo() {
           </Select>
         </Form.Group>
 
-        {/* 성별 */}
         <Form.Group className="mb-4" controlId="formBasicPassword">
           <InfoText>Gender</InfoText>
           <SelectGender className="select-gender">
@@ -211,7 +193,6 @@ export default function EditBasicInfo() {
         </Form.Group>
       </Form>
 
-      {/* Edit 버튼 */}
       <div className='text-center'>
         <ColorButton color={pink} text='Edit' check={checkAbled} 
           disabled={checkAbled} 
@@ -223,7 +204,7 @@ export default function EditBasicInfo() {
   )
 }
 
-// CSS (styled component 사용)
+// CSS
 
 const blue = '#1755d1';
 const pink = '#f4029b';

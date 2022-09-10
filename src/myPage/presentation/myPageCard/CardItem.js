@@ -10,7 +10,7 @@ function CardItem({ props, index, end }) {
 
 	const dispatch = useDispatch();
 	const [displayFlag, setDisplayFlag] = useState(true);
-	if ((index + 1) == end) {
+	if ((index + 1) === end) {
 		useEffect(() => {
 			setDisplayFlag(false);
 		})
@@ -30,7 +30,6 @@ function CardItem({ props, index, end }) {
 		<>
 			<CardDiv>
 				<Card className="body-card">
-					{/* 카드 호버 기능 */}
 					<Link className="" to='/MapPage'>
 						<Card className="body-card-hover" onClick={moveToMap}>
 							<div className="square border border-1 rounded-pill m-auto" style={{ color: 'white', width: '6em' }}>
@@ -40,7 +39,6 @@ function CardItem({ props, index, end }) {
 							</div>
 						</Card>
 					</Link>
-					{/* 아이돌 카드 */}
 					<Card.Img variant="top" className="m-auto" src={ props.fileUrl } style={{ height: '6em', width: '100%' }}/>
 					<Card.Body className="body-card-body">
 						<Card.Title className="text-center">
@@ -64,23 +62,38 @@ function CardItem({ props, index, end }) {
 const NumText = styled.span`
 	color: #3172F6;
 	font-weight: 700;
-	margin-top: 0;
 	border-radius: 50%;
 	border: 5px solid #3172F6; 
 	padding: 1px 5.3px;
-	${props => {
-        if (props.DesignNum === 0) {
-            return`
-				padding: 1px 7px;
-				margin-left: -8px;
-            `
-        }
-        else {
-            return`
-            	margin-left: -8px;
-            `
-    }
-    }};
+	margin-top: 0;
+	margin-left: -8px;
+
+	@media all and (min-width:768px) {
+		${props => {
+			if (props.DesignNum === 0) {
+				return`
+					padding: 1px 7px;
+				`
+			}
+		}
+		}};
+	}
+	
+	@media all and (max-width:767px) {
+		margin-left: -49px;
+		${props => {
+			if (props.DesignNum === 0) {
+				return`
+					padding: 1px 7px;
+				`
+			}
+			else {
+				return`
+		
+				`
+		}
+		}};
+	}
 `
 
 const PathDesignCircle = styled.div`
@@ -92,15 +105,22 @@ const PathDesignCircle = styled.div`
 	margin-left: 148px;
 	`
 	
-	const PathDesignLine = styled.hr`
+const PathDesignLine = styled.hr`
 	display: ${props => props.check ? 'true' : 'none'};
 	position: absolute;
 	border: 2.5px solid #3172F6;
-	width: 214px;
-	margin: 11.5px 24px;
 	top: 0;
 	opacity: 1;
 	
+	@media all and (min-width:768px) {
+		width: 214px;
+		margin: 11.5px 24px;
+	}
+	
+	@media all and (max-width:767px) {
+		width: 172px;
+		margin: 11.5px -17px;
+	}
 `
 
 const CardDiv = styled.div`

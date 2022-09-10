@@ -2,6 +2,7 @@ import axios from 'axios';
 import {hashPwd} from '../../login/presentation/Encryptpwd'
 
 export async function  CheckPwd(pwd) {
+    axios.defaults.baseURL = 'http://3.37.88.220:8080';
 
     const hash = hashPwd(sessionStorage.getItem("memberHash")+pwd);
 

@@ -1,9 +1,10 @@
 import axios from 'axios';
 
 export async function DeleteCourse( CourseHash ) {
+    axios.defaults.baseURL = 'http://3.37.88.220:8080';
+
     let result;
 
-    //await 한 값을 보내준다.
     return await axios.delete('/course', {
         headers: {
             CourseHash: CourseHash,
