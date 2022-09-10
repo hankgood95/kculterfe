@@ -38,9 +38,9 @@ export default function Sidebar(props) {
 				{ props.items[2].icon && <i className={props.items[2].icon}></i> }
 				{ props.items[2].title }
 			</div>
-			<div className='concert_calender'>
+			{/* <div className='concert_calender'>
 				{concertSelect && <ConcertCalendar/>}
-			</div>
+			</div> */}
 		</div>
 	)
 }

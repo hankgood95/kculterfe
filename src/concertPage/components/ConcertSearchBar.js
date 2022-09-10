@@ -1,20 +1,20 @@
 import React from 'react';
-import './ConcertSearchBar.css';
+import styles from './ConcertSearchBar.module.css';
 import PropTypes from 'prop-types'
 import { Form } from 'react-bootstrap';
 
-function ConcertSearchBar({search, handleSearch}) {
+function ConcertSearchBar({search, onChange}) {
 	return (
-		<div className="ConcertSearchBarContainer">
-			<Form>
-				<Form.Group className="mb-3" controlId="formBasicEmail">
-					<Form.Control placeholder="SEARCH" onChange={handleSearch} />
+		<>
+			{/* <Form>
+				<Form.Group className={styles.search_box} controlId="formBasicEmail">
+					<Form.Control placeholder="SEARCH" onChange={onChange} />
      			</Form.Group>
-			</Form>
-		
-		</div>
-
-
+			</Form> */}
+			<form>
+				<input className={styles.no_submit} type="search" placeholder="SEARCH" onChange={onChange}></input>
+			</form>
+		</>
 	)
 }
 ConcertSearchBar.propTypes = {

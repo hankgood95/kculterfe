@@ -7,13 +7,13 @@ import IdolSelect from './IdolSelect';
 
 function ConcertList() {
 	const [search, setSearch] = useState("");
-	const [select, setSelect] = useState("");
+	// const [select, setSelect] = useState("");
 	const handleSearch = (e) => {
 		setSearch(e.target.value)
 	}
-	const handleSelect = (e) => {
-		setSelect(e.target.value)
-	}
+	// const handleSelect = (e) => {
+	// 	setSelect(e.target.value)
+	// }
 
 	const [data, setData] = useState([]);
 	useEffect(() => {
@@ -30,19 +30,19 @@ function ConcertList() {
 		return p.concertName.replace(" ", "").toLocaleLowerCase().includes(search.toLocaleLowerCase());
 	});
 
-	const selectedConcert = filterTitle.filter((p) => {
-		return p.starName.replace(" ", "").toLocaleLowerCase().includes(select.toLocaleLowerCase());
-	});
+	// const selectedConcert = filterTitle.filter((p) => {
+	// 	return p.starName.replace(" ", "").toLocaleLowerCase().includes(select.toLocaleLowerCase());
+	// });
 
 	return (
 		<div className='ConcertListBody'>
 			<div className='Filter'>
 				<div className="ConcertSearchBar">
-					<ConcertSearchBar value={search} handleSearch={handleSearch} />
+					<ConcertSearchBar value={search} onChange={handleSearch} />
 				</div>
 			</div>
 			<div className="CardContainer">
-				{ selectedConcert.map((concertData, index) => 
+				{ filterTitle.map((concertData, index) => 
 						<div className='CardDiv'
 							key={index}
 						>
