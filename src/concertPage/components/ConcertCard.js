@@ -48,6 +48,7 @@ function CardItem(item) {
 							<p></p>
 								<div className={contentStyles.concert_date}>concert date: {item.startDate.split('T')[0]} ~ {item.endDate.split('T')[0]}</div>
 							<div className={contentStyles.concert_explain}>{item.explain}</div>
+							<br/>
 						</div>
 						<div className={contentStyles.body_r_end}>
 							<div className={contentStyles.body_r_end_l}>

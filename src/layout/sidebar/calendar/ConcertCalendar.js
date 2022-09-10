@@ -51,7 +51,7 @@ function dateFormatTrans(date){
 	formattingDate[1] = formattingDate[2];
 	formattingDate[2] = tmp;
 	formattingDate[1] = monthToDigit(formattingDate[1]);
-	console.log("formattingDate: " + formattingDate);
+	// console.log("formattingDate: " + formattingDate);
 	return formattingDate;
 }
 
@@ -64,7 +64,7 @@ export default function ConcertCalendar() {
 	useEffect(()=> {
 		setDate(dateFormatTrans(value)); // 연, 일, 월 순으로 저장됨
 	}, [value])
-	console.log("date: " + date);
+	// console.log("date: " + date);
 	return (
 		<>
 			<div className="calendar_container">

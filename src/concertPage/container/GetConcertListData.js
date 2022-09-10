@@ -8,7 +8,6 @@ export async function getConcertList() {
     })
     .then(function(res){
         list = res.data;
-        console.log(list);
         return list;
     })
     .catch(function(error){
