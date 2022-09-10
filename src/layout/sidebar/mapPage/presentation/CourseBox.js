@@ -79,32 +79,25 @@ function CourseBox({ place }) {
 				>
 					<Modal.Body>
 						<span className='modalspan'>Make your own <br></br>travel course.</span>
-						<form 
-							className='courseForm'
-							onSubmit={e => handleOnSubmit(e, courseList, setCourseList, courseName, memberHash, setModalIsOpen, dispatch)}
-						>
-							<input
-							type="text"
-							value={courseName}
-							placeholder="Enter Course name"
-							onChange={e => setCourseName(e.target.value)}
-							/>
-							<button
-								type="submit"
+							<form 
+								className='courseForm'
+								onSubmit={e => handleOnSubmit(e, courseList, setCourseList, courseName, memberHash, setModalIsOpen, dispatch)}
 							>
-								SUBMIT
-							</button>
-							<button
-								onClick={() => {
-									setModalIsOpen(false);
-								}}
-							>
-								EXIT!!!!
-							</button>
-						</form>
+								<input
+								type="text"
+								value={courseName}
+								placeholder="Enter Course name"
+								onChange={e => setCourseName(e.target.value)}
+								/>
+								<button
+									type="submit"
+								>
+									SUBMIT
+								</button>
+							</form>
 						</Modal.Body>
-				</Modal>
-				</div>
+					</Modal>
+					</div>
 				</div>
 	);
 }
