@@ -41,11 +41,11 @@ function CardItem({ props, index, end }) {
 					</Link>
 					<Card.Img variant="top" className="m-auto" src={ props.fileUrl } style={{ height: '6em', width: '100%' }}/>
 					<Card.Body className="body-card-body">
-						<Card.Title className="text-center">
-							<span style={{ fontSize: '1rem' }}>
+						<CardText>
+							<span style={{ fontSize: '1.1rem' }}>
 								{ props.name }
 							</span>
-						</Card.Title>
+						</CardText>
 					</Card.Body>
 				</Card>
 				<PathDesignCircle>
@@ -58,6 +58,12 @@ function CardItem({ props, index, end }) {
 }
 
 // css
+
+const CardText = styled.div`
+	text-align: center;
+	font-weight: 700;
+
+`
 
 const NumText = styled.span`
 	color: #3172F6;
