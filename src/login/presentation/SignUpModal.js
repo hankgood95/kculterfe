@@ -12,7 +12,6 @@ import axios from 'axios';
 import {hashPwd}  from '../presentation/Encryptpwd';
 
 function SignUpModal({show, onHide}) {
-
   const [email, setEmail] = useState(""); //이메일
   const [password, setPassword] = useState(''); //비밀번호
   const [nickName, setNickName] = useState(''); //닉네임
