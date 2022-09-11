@@ -45,7 +45,7 @@ export function handleOnSubmit(e, courseList, setCourseList, courseName, memberH
 		courseName: courseName,
 		course: courseList,
 	});
-	axios.defaults.baseURL = 'http://kculter-lb-1250111111.ap-northeast-2.elb.amazonaws.com';
+	axios.defaults.baseURL = 'https://kculter-be-lb-830632987.ap-northeast-2.elb.amazonaws.com';
 	axios.post('/course/', jsonData, {
 		headers:{
 			'Content-Type':'application/json'

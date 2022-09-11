@@ -142,7 +142,7 @@ export function handleOnDragEndGM(map, url, setNear) {
 	if (!map || !url) {
 		return;
 	}
-	axios.defaults.baseURL = 'http://kculter-lb-1250111111.ap-northeast-2.elb.amazonaws.com';
+	axios.defaults.baseURL = 'https://kculter-be-lb-830632987.ap-northeast-2.elb.amazonaws.com';
 	axios.get(url + map.getCenter().lat() + '&lng=' + map.getCenter().lng())
 	.then(function(res){
 		const data = res.data.map((item) => {

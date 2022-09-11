@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export async function getPlaceApi(url, type, keyHash) {
-	axios.defaults.baseURL = 'http://kculter-lb-1250111111.ap-northeast-2.elb.amazonaws.com';
+	axios.defaults.baseURL = 'https://kculter-be-lb-830632987.ap-northeast-2.elb.amazonaws.com';
 	return await axios.get(url + "?keyhash=" + keyHash + "&type=" + type)
 	.then(function(res) {
 		return res;
@@ -13,7 +13,7 @@ export async function getPlaceApi(url, type, keyHash) {
 }
 
 export async function getPinApi(url, type, keyHash) {
-	axios.defaults.baseURL = 'http://kculter-lb-1250111111.ap-northeast-2.elb.amazonaws.com';
+	axios.defaults.baseURL = 'https://kculter-be-lb-830632987.ap-northeast-2.elb.amazonaws.com';
 	return await axios.get(url + type + "?keyHash=" + keyHash)
 	.then(function(res) {
 		return res;
