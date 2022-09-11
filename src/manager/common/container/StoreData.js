@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 function StoreData(props){
 
-    axios.defaults.baseURL = 'https://kculter-be-lb-830632987.ap-northeast-2.elb.amazonaws.com';
+    axios.defaults.baseURL = 'https://wooks-weather.com';
 
     const check = (event) => {
         event.preventDefault();

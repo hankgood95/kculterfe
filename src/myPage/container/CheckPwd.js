@@ -2,7 +2,7 @@ import axios from 'axios';
 import {hashPwd} from '../../login/presentation/Encryptpwd'
 
 export async function  CheckPwd(pwd) {
-    axios.defaults.baseURL = 'https://kculter-be-lb-830632987.ap-northeast-2.elb.amazonaws.com';
+    axios.defaults.baseURL = 'https://wooks-weather.com';
 
     const hash = hashPwd(sessionStorage.getItem("memberHash")+pwd);
 
