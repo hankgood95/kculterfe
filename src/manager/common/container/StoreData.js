@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 function StoreData(props){
 
-    axios.defaults.baseURL = 'http://kculter-lb-1250111111.ap-northeast-2.elb.amazonaws.com';
+    axios.defaults.baseURL = 'https://kculter-lb-1250111111.ap-northeast-2.elb.amazonaws.com';
 
     const check = (event) => {
         event.preventDefault();
