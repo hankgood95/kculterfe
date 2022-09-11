@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 function GetListData(props){
 
-    axios.defaults.baseURL = 'https://kculter-be-lb-830632987.ap-northeast-2.elb.amazonaws.com';
+    axios.defaults.baseURL = 'https://wooks-weather.com';
     let navigate = useNavigate();
 
     const getList = () => {
