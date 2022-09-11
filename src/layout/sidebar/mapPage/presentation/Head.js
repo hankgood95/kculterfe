@@ -6,7 +6,9 @@ function Head(props) {
 			{
 				props.imageUrl &&
 				<img
-					src={props.imageUrl}>
+					src={props.imageUrl}
+					alt={props.head}
+				>
 				</img>
 			}
 			<p>{props.head}</p>

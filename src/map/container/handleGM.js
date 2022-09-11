@@ -73,11 +73,11 @@ export function getConcertPlaceData(concert, map, google, setCenter, setZoom, di
 	})
 }
 
-export function getKculterPlaceData(kculter, map, google, setCenter, setZoom, dispatch, pin) {
-	if (!kculter || !kculter.length) {
+export function getKculterPlaceData(kculter, map, google, setCenter, setZoom, dispatch) {
+	if (!kculter.place || !kculter.place.length) {
 		return;
 	}
-	axios.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + kculter[0].lat + "," + kculter[0].lng + "&radius=10&key=" + process.env.REACT_APP_GOOGLE_MAP_KEY)
+	axios.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + kculter.place[0].lat + "," + kculter.place[0].lng + "&radius=10&key=" + process.env.REACT_APP_GOOGLE_MAP_KEY)
 	.then(res => {
 		const placeId = res.data.results[0].place_id;
 		const service = new window.google.maps.places.PlacesService(map);
@@ -98,7 +98,7 @@ export function getKculterPlaceData(kculter, map, google, setCenter, setZoom, di
 				placeData.geometry &&
 				placeData.geometry.location
 				) {
-					handleOnLoadKculter(kculter[0], placeData, window.sessionStorage.getItem("title"), pin.imageUrl, setCenter, setZoom, dispatch);
+					handleOnLoadKculter(kculter.place[0], placeData, window.sessionStorage.getItem("title"), kculter.pin.imageUrl, setCenter, setZoom, dispatch);
 				}
 		})
 	})
@@ -107,9 +107,9 @@ export function getKculterPlaceData(kculter, map, google, setCenter, setZoom, di
 	})
 }
 	
-export function handleOnLoad(map, setMap, kculter, concert, google, setCenter, setZoom, dispatch, url, setNear, pin) {
+export function handleOnLoad(map, setMap, kculter, concert, google, setCenter, setZoom, dispatch, url, setNear) {
 	setMap(() => map);
-	getKculterPlaceData(kculter, map, google, setCenter, setZoom, dispatch, pin);
+	getKculterPlaceData(kculter, map, google, setCenter, setZoom, dispatch);
 	getConcertPlaceData(concert, map, google, setCenter, setZoom, dispatch);
 	handleOnDragEndGM(map, url, setNear);
 }

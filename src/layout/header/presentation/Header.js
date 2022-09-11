@@ -33,22 +33,22 @@ function Header(props) {
 	const settingSelected = useSelector(state => state.settingSelected);
 
 	useEffect(() => {
-		if (location.pathname == "/MapPage") {
+		if (location.pathname === "/MapPage") {
 			setTitle((title) => "Map");
 			setImg((img) => map);
-		} else if (location.pathname == "/IdolListPage" && idolSelected) {
+		} else if (location.pathname === "/IdolListPage" && idolSelected) {
 			setTitle((title) => "Kpop");
 			setImg((img) => kpop);
-		} else if (location.pathname == "/IdolListPage" && attrSelected) {
+		} else if (location.pathname === "/IdolListPage" && attrSelected) {
 			setTitle((title) => "Culture");
 			setImg((img) => culture);
-		} else if (location.pathname == "/IdolListPage" && concertSelected) {
+		} else if (location.pathname === "/IdolListPage" && concertSelected) {
 			setTitle((title) => "Concert");
 			setImg((img) => concertImg);
-		} else if (location.pathname == "/Mypage" && dashboardSelected) {
+		} else if (location.pathname === "/Mypage" && dashboardSelected) {
 			setTitle((title) => "Dashboard");
 			setImg((img) => mypage);
-		} else if (location.pathname == "/Mypage" && settingSelected) {
+		} else if (location.pathname === "/Mypage" && settingSelected) {
 			setTitle((title) => "Setting");
 			setImg((img) => mypage);
 		} else {
