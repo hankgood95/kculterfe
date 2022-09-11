@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export async function getKpopList() {
-    axios.defaults.baseURL = 'http://kculter-lb-1250111111.ap-northeast-2.elb.amazonaws.com';
+    axios.defaults.baseURL = 'https://kculter-lb-1250111111.ap-northeast-2.elb.amazonaws.com';
     let list;
     //await 한 값을 보내준다.
     return await axios.get('/celebrities')

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export async function getCourseList() {
-    axios.defaults.baseURL = 'http://kculter-lb-1250111111.ap-northeast-2.elb.amazonaws.com';
+    axios.defaults.baseURL = 'https://kculter-lb-1250111111.ap-northeast-2.elb.amazonaws.com';
 
     let list;
 
