@@ -29,7 +29,7 @@ function LoginPage(){
         <div className='login-con'>
           <img src={loginimg} /> 
           <div className='login-top'> 
-          <Loginlogo className='loginNav'/> 
+          <Loginlogo className='loginNav' id ="login-loggo"/> 
           </div>
             <div className='login-div'>
                 <div className='login-black'>
@@ -47,15 +47,16 @@ function LoginPage(){
                     onChange={e=> setPwd(e.target.value)}
                     />
                 <Loginbtn email={email} pwd={pwd}>LOGIN</Loginbtn>
-                </div>
-                <SignUpModal
-                    show={SignUp} onHide={close}
-                    /> 
                 <div className="signup-btn" onClick={()=> setSignUp(true)}>
                     <button
                         onClick={()=> setSignUp(true)}
                     >SIGNUP</button>
                 </div>
+                </div>
+                <SignUpModal
+                    show={SignUp} onHide={close}
+                    /> 
+                
                 <div className="for-pwd">
                 <ForgotPwdModal
             show={ForgotPwd} onHide={()=>setForgotPwd(false)}

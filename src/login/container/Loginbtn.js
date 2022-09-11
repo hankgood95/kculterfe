@@ -7,7 +7,7 @@ import axios from 'axios';
 
 function Loginbtn (props) {
   //이 멤버를 세션 스토리지에 저장을 해야한다. 
-  axios.defaults.baseURL = 'https://kculter-be-lb-830632987.ap-northeast-2.elb.amazonaws.com';
+    axios.defaults.baseURL = 'https://wooks-weather.com';
 
   const sendToServer = () => {
     if (props.email === ""){

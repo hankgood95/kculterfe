@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export async function checkEmail(email){
-  axios.defaults.baseURL = 'https://kculter-be-lb-830632987.ap-northeast-2.elb.amazonaws.com';
+  axios.defaults.baseURL = 'https://wooks-weather.com';
 
   let result;
   return await axios.get("/member/emaildup?email="+email)
