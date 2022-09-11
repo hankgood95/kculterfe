@@ -8,6 +8,8 @@
 }
 
 @media all and (max-width: 812px) {
+  
+
   .login-con {
     position: relative;
     display: flex;
@@ -110,7 +112,8 @@
 
 .login-btn {
   background-color: #1755d1;
-  padding: 10px 130px 10px 130px;
+  width: 100%;
+  padding: 10px;
   border: none;
   border-radius: 10px;
   margin-top: 20px;
@@ -120,11 +123,15 @@
 
 .signup-btn {
   background-color: #f4029b;
-  padding: 10px 120px 10px 120px;
+  width: 100%;
+  border: none;
   color: #ffff;
+  padding: 10px;
   font-size: 15px;
   border-radius: 10px;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .signup-btn button {
