@@ -34,7 +34,7 @@ export function handleCard(data, head, setCenter, setZoom, dispatch, pin) {
 		photos: null,
 		stayPhotos: photos,
 		reviews: null,
-		placeHash: "0",
+		keyHash: "0",
 		placeType: 0,
 		status: 0,
 	}
@@ -88,7 +88,7 @@ export function handleCustomMarker(data, head, setCenter, setZoom, dispatch, pin
 						photos: placeData.photos,
 						stayPhotos: null,
 						reviews: null,
-						placeHash: data.placeHash,
+						keyHash: data.keyHash,
 						placeType: data.placeType,
 						status: data.status,
 					}
@@ -111,7 +111,7 @@ export function handleCustomMarker(data, head, setCenter, setZoom, dispatch, pin
 			photos: null,
 			stayPhotos: null,
 			reviews: null,
-			placeHash: data.placeHash,
+			keyHash: data.keyHash,
 			placeType: data.placeType,
 			status: data.status,
 		}
@@ -136,7 +136,7 @@ export function handleGoogleMarkerAndSearch(data, head, setCenter, setZoom, disp
 		photos: data.photos,
 		stayPhotos: null,
 		reviews: data.reviews,
-		placeHash: "0",
+		keyHash: "0",
 		placeType: 0,
 		status: 0,
 	}
