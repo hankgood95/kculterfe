@@ -46,12 +46,13 @@ function IdolList({}) {
 	return (
 		<div className={styles.ListBody}>
 			<div className={styles.SearchBar}>
-				<IdolSearchBar value={search} onChange={onChange} />
+				<IdolSearchBar search={search} onChange={onChange} />
 			</div>
 			<div className={styles.CardContainer}>
-				{ filterTitle.map(idolcard => {
+				{ filterTitle.map((idolcard, index) => {
 					return <div className={styles.CardDiv}>
 						<IdolCard
+						key={index}
 						keyHash={idolcard.keyHash}
 						type={1}
 						title={idolcard.name.replace(/\n/g, " ")}

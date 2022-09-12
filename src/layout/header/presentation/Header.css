@@ -9,14 +9,15 @@ header {
 	align-items: center;
 	text-align: center;
 	height: 100%;
+	width: 30px;
 	margin-left: 20px;
   }
   
   header .left img {
-	height: 30px;
-	width: 30px;
+	height: 100%;
+	width: 100%;
 	margin-left: 10px;
-	margin-right: 30px;
+	margin-right: 10px;
 	cursor: pointer;
   }
 
@@ -30,6 +31,7 @@ header {
 	  display: flex;
 	  align-items: center;
 	  margin: 0 20px 0 auto;
+		width: 150px;
   }
   
   header .right .logo {
@@ -41,13 +43,8 @@ header {
   }
   
   header .right .logo-img {
-		height: 50px;
+		height: 100%;
 		width: 100%;
-  }
-  
-  header .right .menu {
-	height: 30px;
-	width: 30px;
   }
 
   header i.bi.bi-list {
