@@ -10,7 +10,7 @@ function PlaceForm(props){
 
 
     //백엔드로 데이터를 보내기 위해 만든 변수들
-    const [placeNum,setPlaceNum] = useState();
+    const [keyHash,setKeyHash] = useState
     const [placeType,setPlaceType] = useState();
     const [keyNum,setKeyNum] = useState();
     const [name,setName] = useState();
@@ -109,7 +109,7 @@ function PlaceForm(props){
     //백엔드로 보낼 객체 값
     const formValue = {
 
-        placeNum : placeNum, //장소번호 값, 기존 장소값에서 선택할수 있기 때문에 만듬
+        keyHash: keyHash,
         placeType : placeType, //kpop = 1 문화체험 = 2
         culture : keyNum, //기존 있는 문화체험 장소일경우 보내는 culture 키값
         kpop: keyNum, //기존 있는 kpop 장소일 경우 보내는 키값
@@ -168,7 +168,7 @@ function PlaceForm(props){
             setLongDis(true);
 
             //값을 넣어준다.
-            setPlaceNum(check);
+            setKeyHash(check);
         }else{
             //입력 disabled 시켜주기 위해서
             setNameX(false);
@@ -187,7 +187,7 @@ function PlaceForm(props){
             setLongDis(false);
 
             //값을 넣어준다.
-            setPlaceNum(check);           
+            setKeyHash(check);
         }
     }
 
