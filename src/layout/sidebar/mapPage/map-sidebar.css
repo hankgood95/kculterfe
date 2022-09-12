@@ -109,6 +109,14 @@
 	margin-right: 10px;
 }
 
+.map-sidebar .map-sidebar-photos .photos-content {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+.map-sidebar .map-sidebar-photos .photos-content::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, Opera*/
+}
+
 .map-sidebar .map-sidebar-photos .photos-item {
 	height: 100px;
 	width: 100px;
