@@ -10,7 +10,7 @@ function PlaceForm(props){
 
 
     //백엔드로 데이터를 보내기 위해 만든 변수들
-    const [keyHash,setKeyHash] = useState
+    const [keyHash,setKeyHash] = useState();
     const [placeType,setPlaceType] = useState();
     const [keyNum,setKeyNum] = useState();
     const [name,setName] = useState();
