@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import common from "../sidebarCommonData.json"
@@ -11,6 +11,12 @@ export default function Sidebar(props) {
 	const dispatch = useDispatch();
 	const dashboardSelect = useSelector(state => state.dashboardSelected);
 	const settingSelect = useSelector(state => state.settingSelected);
+
+	if (props.isOff === true) {
+		useEffect(() => {
+			props.sideClose();
+		}, [dashboardSelect, settingSelect])
+	}
 
 	return (
 		<div className="sidebar">

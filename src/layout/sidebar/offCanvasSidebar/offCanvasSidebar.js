@@ -24,13 +24,17 @@ function OffCanvasSidebar(props) {
 		props.handleOpen(true);
 	}, [place]);
 	
+	useEffect(() => {
+		props.handleOpen(props.isOpen);
+	}, [props.isOpen])
+
 	return (
 		<>
 			<Offcanvas className='custom' show={ props.isOpen && isSm } onHide={props.sideClose}>
 				<div className='inCanvas'>
-					{location.pathname == "/IdolListPage" && <IdolListSideNav pageidx={0} items={idolListItem}/>}
+					{location.pathname == "/IdolListPage" && <IdolListSideNav pageidx={0} items={idolListItem} sideClose={props.sideClose} isOff={true}/>}
 					{location.pathname == "/MapPage" && <MapSideNav pageidx={1} items={mapItem} handleOpen={props.handleOpen}/>}
-					{location.pathname == "/Mypage" && <MySideNav pageidx={2} items={myPageItem}/>}
+					{location.pathname == "/Mypage" && <MySideNav pageidx={2} items={myPageItem} sideClose={props.sideClose} isOff={true}/>}
 				</div>
 			</Offcanvas>
 		</>

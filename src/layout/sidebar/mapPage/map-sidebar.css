@@ -16,7 +16,8 @@
   display: block;
   background-color: rgb(0, 3, 77);
   height: 100vh;
-  min-width: 300px;
+  width: 80vw;
+	min-width: 80vw;
   grid-row: 1 / span 4;
 }
 
