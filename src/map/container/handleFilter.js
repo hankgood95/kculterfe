@@ -61,7 +61,7 @@ export async function fetchSelected(map, google, list, e, isKpop, kculter, setKc
 			name: place.data[0].name,
 			lat: place.data[0].lat,
 			lng: place.data[0].lng,
-			placeHash: place.data[0].placeHash,
+			keyHash: place.data[0].keyHash,
 			placeType: place.data[0].placeType,
 			status: place.data[0].status,
 		}
