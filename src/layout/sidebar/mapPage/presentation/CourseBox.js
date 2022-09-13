@@ -70,17 +70,18 @@ function CourseBox({ place }) {
 							>
 								<input
 								type="text"
-								value={reduxCourseData.courseName ? reduxCourseData.courseName : ""}
 								placeholder="Enter Course name"
+								defaultValue={reduxCourseData.courseName}
 								onChange={e => setCourseName(e.target.value)}
-								required
 								/>
 								<button
 									onClick={e => handleOnSubmit(e, reduxCourseData, course, setCourse, courseName, memberHash, setModalIsOpen, dispatch)}
 								>
 									SUBMIT
 								</button>
-								<button>
+								<button
+									onClick={() => setModalIsOpen(false)}
+								>
 									EXIT
 								</button>
 							</form>
