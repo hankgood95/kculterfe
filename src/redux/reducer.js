@@ -21,6 +21,12 @@ const initState = {
 		status: 0,
 	},
 	course: [],
+	courseData: {
+		memberHash: null,
+		courseHash: null,
+		courseName: null,
+		course: null,
+	},
 	member: null,
 	idolSelected: true,
 	attrSelected: false,
@@ -33,7 +39,6 @@ const initState = {
 		lng: 0,
 		img: "",
 	},
-	courseList: null,
 }
 
 // 액션 추가 여기
@@ -52,7 +57,7 @@ export const SET_KCULTER_PLACE = 'SET_KCULTER_PLACE';
 export const SET_PIN = 'SET_PIN';
 export const MAP_IN_CONCERT = 'MAP_IN_CONCERT';
 export const CLEAR_MAP_CONCERT = 'CLEAR_MAP_CONCERT';
-export const GET_DIRECTION = 'GET_DIRECTION';
+export const SAVE_COURSE = 'SAVE_COURSE';
 
 // reducer
 export default function reducer(state = initState, action) {
@@ -133,10 +138,10 @@ export default function reducer(state = initState, action) {
 				...state,
 				mapConcert: action.data,
 			}
-		case GET_DIRECTION:
+		case SAVE_COURSE:
 			return {
 				...state,
-				courseList: action.data,
+				courseData: action.data,
 			}
 		default:
 			return state;

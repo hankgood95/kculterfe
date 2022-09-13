@@ -20,8 +20,8 @@ function CourseCard (props) {
 
   return (
     <div>
-      {props.courseList &&
-			props.courseList.map((item, i) => (
+      {props.course &&
+			props.course.map((item, i) => (
         <div className="course-card"
 					key={i}
 					onClick={() => handleOnClickCard(item, dispatch)}
@@ -34,7 +34,7 @@ function CourseCard (props) {
 						{item.name}
 					</p>
 					<button
-						onClick={() => handleOnClickDel(props.courseList, props.setCourseList, i, dispatch)}
+						onClick={() => handleOnClickDel(props.course, props.setCourse, i, dispatch)}
 						id = "close-course">
 							<span id = "x-span">X</span>
 					</button>

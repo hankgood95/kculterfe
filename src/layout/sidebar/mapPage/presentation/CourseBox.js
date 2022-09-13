@@ -6,7 +6,9 @@ import {
 	useDispatch,
 	useSelector
 } from 'react-redux';
-import {Modal} from 'react-bootstrap';
+import {
+	Modal
+} from 'react-bootstrap';
 import CourseCard from './CourseCard';
 import {
 	handleOnClickAdd,
@@ -17,15 +19,16 @@ import {
 function CourseBox({ place }) {
 	const memberHash = window.sessionStorage.getItem("memberHash");
 	const dispatch = useDispatch();
-	const reduxCourseList = useSelector(state => state.course);
-	const [courseList, setCourseList] = useState([])
+	const reduxCourse = useSelector(state => state.course);
+	const reduxCourseData = useSelector(state => state.courseData);
+	const [course, setCourse] = useState([])
+	const [courseName, setCourseName] = useState(null);
 	const [modalIsOpen, setModalIsOpen] = useState(false);
-	const [courseName, setCourseName] = useState("");
 	const handleClose = () => setModalIsOpen(false);
 
 	useEffect(() => {
-		setCourseList(() => reduxCourseList);
-	}, [courseList]);
+		setCourse(() => reduxCourse);
+	}, [course]);
 
 	return (
 		<div className="course">
@@ -35,19 +38,19 @@ function CourseBox({ place }) {
 				</p>
 			</div>
       <CourseCard className='course-list'
-				courseList={courseList}
-				setCourseList={setCourseList}
+				course={course}
+				setCourse={setCourse}
 			/>
 			<div className="course-button">
       	<button
-					onClick={() => handleOnClickAdd(place, courseList, setCourseList, dispatch)}
+					onClick={() => handleOnClickAdd(place, course, setCourse, dispatch)}
 				>
       	  ADD
       	</button>
 				{
-					courseList.length > 0 &&
+					course.length > 0 &&
 					<button
-						onClick={() => handleOnClickSave(setModalIsOpen, courseList)}
+						onClick={() => handleOnClickSave(setModalIsOpen, course)}
 					>
       		  SAVE
       		</button>
@@ -72,7 +75,7 @@ function CourseBox({ place }) {
 								onChange={e => setCourseName(e.target.value)}
 								/>
 								<button
-									onClick={e => handleOnSubmit(e, courseList, setCourseList, courseName, memberHash, setModalIsOpen, dispatch)}
+									onClick={e => handleOnSubmit(e, reduxCourseData, course, setCourse, courseName, memberHash, setModalIsOpen, dispatch)}
 								>
 									SUBMIT
 								</button>

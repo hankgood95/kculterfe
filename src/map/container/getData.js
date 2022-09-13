@@ -95,6 +95,7 @@ export async function getKculterData(setKculter, type, keyHash, dispatch) {
 }
 
 export async function getData(kculter, setKculter, dispatch) {
+	console.log(kculter.course);
 	if (kculter.course.place.length > 0) {
 		await getCourseData(kculter, setKculter, dispatch);
 	}	else if (kculter.concertProps.keyHash) {
