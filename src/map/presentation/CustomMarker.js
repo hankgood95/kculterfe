@@ -9,20 +9,25 @@ import {
 function CustomMarker(props) {
 	const [place, setPlace] = useState(null);
 	const [icon, setIcon] = useState(null);
+	let imgUrl = null;
 	
 	useEffect(() => {
 		if (props.place) {
 			setPlace(() => props.place);
 		}
 		if (props.pin && props.pin.imageUrl) {
+			imgUrl = props.pin.imageUrl;
 			const icon = new window.google.maps.MarkerImage(
-				props.pin.imageUrl,
+				imgUrl,
 				null,
 				null,
 				null,
 				new window.google.maps.Size(40, 40),
 			);
 			setIcon(() => icon);
+		} else {
+			imgUrl = null;
+			setIcon(() => null);
 		}
 	}, [props.place]);
 
@@ -38,7 +43,7 @@ function CustomMarker(props) {
 						lng: item.lng
 					}}
 					onClick={() => {
-						props.markerHandler(item, props.title, props.setCenter, props.setZoom, props.dispatch, props.pin.imageUrl, props.map, props.google);
+						props.markerHandler(item, props.title, props.setCenter, props.setZoom, props.dispatch, imgUrl, props.map, props.google);
 					}}
 				/>
 			);

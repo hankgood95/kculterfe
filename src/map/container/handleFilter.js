@@ -19,7 +19,7 @@ import {
 } from '../container/handleOnMarker';
 import axios from 'axios';
 
-export async function fetchSelected(map, google, list, e, isKpop, kculter, setKculter, setCenter, setZoom, dispatch) {
+export async function fetchSelected(map, google, list, e, isKpop, setKculter, setCenter, setZoom, dispatch) {
 	const found = list.find(obj => obj.hash == e.target.value);
 	if (isKpop === true) {
 		modifySessionItem(e.target.value, 1, found.name);
@@ -37,8 +37,9 @@ export async function fetchSelected(map, google, list, e, isKpop, kculter, setKc
 		return;
 	}
 	const pin = await getPinApi("/pin/", pramType, window.sessionStorage.getItem("keyHash"));
+	console.log(place.data);
 	let placeToRedux;
-	if (place && pin && place.data && pin.data) {
+	if (place && place.data) {
 		setKculter(prev => ({
 			...prev,
 			center: {
@@ -47,7 +48,7 @@ export async function fetchSelected(map, google, list, e, isKpop, kculter, setKc
 			}, 
 			data: {
 				place: place.data,
-				pin: pin.data,
+				pin: pin.data ? pin.data : null,
 			},
 		}));
 		placeToRedux = {
@@ -69,6 +70,9 @@ export async function fetchSelected(map, google, list, e, isKpop, kculter, setKc
 			type: CLICK_PLACE,
 			data: placeToRedux,
 		});
+	}
+	if (!placeToRedux.lat || !placeToRedux.lng) {
+		return;
 	}
 	axios.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + placeToRedux.lat + "," + placeToRedux.lng + "&radius=10&key=" + process.env.REACT_APP_GOOGLE_MAP_KEY)
 	.then(res => {

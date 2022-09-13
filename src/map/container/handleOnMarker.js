@@ -76,7 +76,7 @@ export function handleCustomMarker(data, head, setCenter, setZoom, dispatch, pin
 				) {
 					const place = {
 						head: head,
-						imageUrl: pin,
+						imageUrl: pin ? pin : null,
 						address: data.address,
 						culture: data.culture,
 						explain: data.explain,

@@ -31,7 +31,7 @@ function MapFilter(props) {
 				value={value}
 				onChange={(e) => {
 					if (e.target.value !== "0") {
-						fetchSelected(props.map, props.google, list, e, isKpop, props.kculter, props.setKculter, props.setCenter, props.setZoom, dispatch);
+						fetchSelected(props.map, props.google, list, e, isKpop, props.setKculter, props.setCenter, props.setZoom, dispatch);
 					}
 				}}
 			>
