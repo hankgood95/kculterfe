@@ -4,7 +4,7 @@ import "../../styles/MyPage.css"
 import "../../styles/Button.css"
 import CardList from './CardList';
 import { useDispatch } from 'react-redux';
-import { MODIFY_COURSE } from '../../../redux/reducer';
+import { SAVE_COURSE } from '../../../redux/reducer';
 import { CLICK_PLACE } from '../../../redux/reducer';
 import { DeleteCourse } from '../../container/DeleteCourse';
 import styled from 'styled-components';
@@ -19,11 +19,11 @@ function BoxCardItem({ props, dayNum }) {
 	const dispatch = useDispatch();
 
     const courseMoveToMapBtn = () => {
-        let newCourseList = props.course;
+        let newCourseList = props;
         let place = props
 
         dispatch({
-            type: MODIFY_COURSE,
+            type: SAVE_COURSE,
             data: newCourseList
         })
         dispatch({

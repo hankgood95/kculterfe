@@ -39,6 +39,13 @@ const initState = {
 		lng: 0,
 		img: "",
 	},
+	courseList: null,
+	courseData: {
+		memberHash: null,
+		courseHash: null,
+		courseName: null,
+		course: null,
+	},
 }
 
 // 액션 추가 여기
