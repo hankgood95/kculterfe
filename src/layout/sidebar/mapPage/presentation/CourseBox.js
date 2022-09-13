@@ -70,7 +70,7 @@ function CourseBox({ place }) {
 							>
 								<input
 								type="text"
-								value={courseName}
+								value={reduxCourseData.courseName ? reduxCourseData.courseName : ""}
 								placeholder="Enter Course name"
 								onChange={e => setCourseName(e.target.value)}
 								required
