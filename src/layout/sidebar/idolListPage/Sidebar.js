@@ -14,11 +14,6 @@ export default function Sidebar(props) {
 	const attrSelect = useSelector(state => state.attrSelected);
 	const concertSelect = useSelector(state => state.concertSelected);
 
-	if (props.isOff === true) {
-		useEffect(() => {
-			props.sideClose();
-		}, [attrSelect, idolSelect, concertSelect])
-	}
 	return (
 		<div className="sidebar">
 			<Link to='/.'><i className="bi-chevron-left"/></Link>
