@@ -25,7 +25,7 @@ export async function getCourseData(kculter, setKculter, dispatch) {
 		name: kculter.course.place[0].name,
 		lat: kculter.course.place[0].lat,
 		lng: kculter.course.place[0].lng,
-		placeHash: kculter.course.place[0].placeHash,
+		keyHash: kculter.course.place[0].keyHash,
 		placeType: kculter.course.place[0].placeType,
 		status: kculter.course.place[0].status,
 	}
@@ -87,7 +87,7 @@ export async function getKculterData(setKculter, type, keyHash, dispatch) {
 			name: place.data[0].name,
 			lat: place.data[0].lat,
 			lng: place.data[0].lng,
-			placeHash: place.data[0].placeHash,
+			keyHash: place.data[0].keyHash,
 			placeType: place.data[0].placeType,
 			status: place.data[0].status,
 		}
