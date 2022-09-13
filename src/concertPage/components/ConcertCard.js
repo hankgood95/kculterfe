@@ -47,15 +47,20 @@ function CardItem(item) {
 							<h2 className={contentStyles.card_item_title}>{item.title}</h2>
 							<p></p>
 								<div className={contentStyles.concert_date}>concert date: {item.startDate.split('T')[0]} ~ {item.endDate.split('T')[0]}</div>
-							<div className={contentStyles.concert_explain}>{item.explain}</div>
+							<div className={contentStyles.explain_container}>
+								<div className={contentStyles.concert_explain}>{item.explain}</div>
+							</div>
 							<br/>
 						</div>
 						<div className={contentStyles.body_r_end}>
 							<div className={contentStyles.body_r_end_l}>
+								<div className={contentStyles.close_btn}>
+									<Button onClick={handleClose}>Close</Button>
+								</div>
 								<div className={contentStyles.reserve_btn}>
 									<Button href={item.buySite} target='_blank'>go to reserve</Button>
 								</div>
-								<div className={contentStyles.map_btn}>
+								{/* <div className={contentStyles.map_btn}>
 									<Link to="/MapPage">
 										<Button onClick={() => {
 																dispatch({
@@ -71,10 +76,7 @@ function CardItem(item) {
 																go to map
 										</Button>
 									</Link>
-								</div>
-							</div>
-							<div className={contentStyles.close_btn}>
-								<Button onClick={handleClose}>Close</Button>
+								</div> */}
 							</div>
 						</div>
 					</div>
