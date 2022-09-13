@@ -73,6 +73,7 @@ function CourseBox({ place }) {
 								value={courseName}
 								placeholder="Enter Course name"
 								onChange={e => setCourseName(e.target.value)}
+								required
 								/>
 								<button
 									onClick={e => handleOnSubmit(e, reduxCourseData, course, setCourse, courseName, memberHash, setModalIsOpen, dispatch)}
