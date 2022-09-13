@@ -18,6 +18,7 @@ function useFocusOn(place, setCenter, setZoom, dispatch) {
 }
 
 export function handleCard(data, head, setCenter, setZoom, dispatch, pin) {
+	console.log(pin);
 	const photos = [{image: data.firstimage}, {image: data.firstimage2}];
 	const place = {
 		head: head,

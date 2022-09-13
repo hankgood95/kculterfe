@@ -29,7 +29,7 @@ function MapPage() {
 		libraries: lib,
 	});
 	const reduxConcert = useSelector(state => state.mapConcert);
-	const reduxCourse = useSelector(state => state.course);
+	const reduxCourseData = useSelector(state => state.courseData);
 	const [kculter, setKculter] = useState({
 		isLoaded: false,
 		center: {
@@ -53,7 +53,9 @@ function MapPage() {
 			img: reduxConcert.img,
 		},
 		course: {
-			place: reduxCourse,
+			memberHash: reduxCourseData.memberHash,
+			courseHash: reduxCourseData.courseHash,
+			place: reduxCourseData.course,
 			pin: {
 				imageUrl: coursePin,
 			}

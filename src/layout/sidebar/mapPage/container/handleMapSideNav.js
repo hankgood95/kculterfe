@@ -46,14 +46,14 @@ export function handleOnSubmit(e, courseData, course, setCourse, courseName, mem
 		data: {
 			memberHash: courseData.memberHash ? courseData.memberHash : memberHash,
 			courseHash: courseData.courseHash ? courseData.courseHash : null,
-			courseName: courseData.courseName ? courseData.courseName : courseName,
+			courseName: courseData.courseName ? courseName : courseData.courseName,
 			course: course,
 		}
 	})
 	const jsonData = JSON.stringify({
 		memberHash: courseData.memberHash ? courseData.memberHash : memberHash,
 		courseHash: courseData.courseHash ? courseData.courseHash : null,
-		courseName: courseData.courseName ? courseData.courseName : courseName,
+		courseName: courseData.courseName ? courseName : courseData.courseName,
 		course: course,
 	});
 	axios.defaults.baseURL = 'https://wooks-weather.com';

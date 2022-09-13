@@ -3,7 +3,7 @@ import {
 	getPinApi,
 } from './getInfo';
 import {
-	CLICK_PLACE,
+	CLICK_PLACE, MODIFY_COURSE,
 } from '../../redux/reducer';
 
 export async function getCourseData(kculter, setKculter, dispatch) {
@@ -33,6 +33,10 @@ export async function getCourseData(kculter, setKculter, dispatch) {
 		type: CLICK_PLACE,
 		data: placeToRedux,
 	});
+	dispatch({
+		type: MODIFY_COURSE,
+		data: kculter.course.place,
+	})
 }
 	
 export async function getConcertData(kculter, setKculter) {
@@ -95,8 +99,7 @@ export async function getKculterData(setKculter, type, keyHash, dispatch) {
 }
 
 export async function getData(kculter, setKculter, dispatch) {
-	console.log(kculter.course);
-	if (kculter.course.place.length > 0) {
+	if (kculter.course.place && kculter.course.place.length > 0) {
 		await getCourseData(kculter, setKculter, dispatch);
 	}	else if (kculter.concertProps.keyHash) {
 		await getConcertData(kculter, setKculter, dispatch);

@@ -22,7 +22,7 @@ function CourseBox({ place }) {
 	const reduxCourse = useSelector(state => state.course);
 	const reduxCourseData = useSelector(state => state.courseData);
 	const [course, setCourse] = useState([])
-	const [courseName, setCourseName] = useState(null);
+	const [courseName, setCourseName] = useState("");
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	const handleClose = () => setModalIsOpen(false);
 

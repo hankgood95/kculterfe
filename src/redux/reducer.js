@@ -22,6 +22,10 @@ const initState = {
 	},
 	course: [],
 	courseData: {
+		center: {
+			lat: 0,
+			lng: 0,
+		},
 		memberHash: null,
 		courseHash: null,
 		courseName: null,
@@ -38,13 +42,6 @@ const initState = {
 		lat: 0,
 		lng: 0,
 		img: "",
-	},
-	courseList: null,
-	courseData: {
-		memberHash: null,
-		courseHash: null,
-		courseName: null,
-		course: null,
 	},
 }
 

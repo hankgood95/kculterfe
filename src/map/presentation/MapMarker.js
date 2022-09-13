@@ -45,21 +45,6 @@ function MapMarker(props) {
 					dispatch={props.dispatch}
 				/>
 			}
-			{/* 코스 마커 */}
-			{
-				course.place &&
-				<CustomMarker
-					map={props.map}
-					google={props.google}
-					place={course.place}
-					pin={course.pin}
-					title={"COURSE"}
-					markerHandler={handleCustomMarker}
-					setCenter={props.setCenter}
-					setZoom={props.setZoom}
-					dispatch={props.dispatch}
-				/>
-			}
 			{/* Near 마커 */}
 			{
 				props.near.place ?
@@ -69,6 +54,7 @@ function MapMarker(props) {
 						pin={props.near.stayPin}
 						title={"STAY"}
 						markerHandler={handleCard}
+						course={course}
 						setCenter={props.setCenter}
 						setZoom={props.setZoom}
 						dispatch={props.dispatch}
@@ -79,12 +65,29 @@ function MapMarker(props) {
 						pin={props.near.tourPin}
 						title={"TOUR"}
 						markerHandler={handleCard}
+						course={course}
 						setCenter={props.setCenter}
 						setZoom={props.setZoom}
 						dispatch={props.dispatch}
 					/>
 				:
 				<></>
+			}
+			{/* 코스 마커 */}
+			{
+				course.place &&
+				<CustomMarker
+					map={props.map}
+					google={props.google}
+					place={course.place}
+					pin={course.pin}
+					course={course}
+					title={"COURSE"}
+					markerHandler={handleCustomMarker}
+					setCenter={props.setCenter}
+					setZoom={props.setZoom}
+					dispatch={props.dispatch}
+				/>
 			}
 			{/* Concert 마커 */}
 			{
