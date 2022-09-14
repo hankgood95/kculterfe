@@ -36,7 +36,7 @@ export function handleOnClickSave(setModalIsOpen, course) {
 
 export function handleOnSubmit(e, courseData, course, setCourse, courseName, memberHash, setModalIsOpen, dispatch) {
 	e.preventDefault();
-	if (!courseName) {
+	if (!courseData.courseName && !courseName) {
 		alert ("Please write your course name");
 		return;
 	}
@@ -50,14 +50,14 @@ export function handleOnSubmit(e, courseData, course, setCourse, courseName, mem
 		data: {
 			memberHash: courseData.memberHash ? courseData.memberHash : memberHash,
 			courseHash: courseData.courseHash ? courseData.courseHash : null,
-			courseName: courseName,
+			courseName: courseName ? courseName : courseData.courseName,
 			course: course,
 		}
 	})
 	const jsonData = JSON.stringify({
 		memberHash: courseData.memberHash ? courseData.memberHash : memberHash,
 		courseHash: courseData.courseHash ? courseData.courseHash : null,
-		courseName: courseName,
+		courseName: courseName ? courseName : courseData.courseName,
 		course: course,
 	});
 	axios.defaults.baseURL = 'https://wooks-weather.com';
