@@ -46,7 +46,7 @@ function StoreData(props){
                 if(result === 201){
                     alert("해당 장소는 이미 kpop 혹은 culture 관련 장소로 등록되어 있습니다.");
                     window.location.reload();
-                }else if(result ==- 500){
+                }else if(result === 500){
                     alert("서버에 저장이 안됐습니다. 서버 로그와 함께 관계자에게 문의하세요.");
                     window.location.reload();
                 }else{
