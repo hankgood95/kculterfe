@@ -64,7 +64,7 @@ function BoxCardItem({ props, dayNum }) {
                 </div>
                 <div className='right'>
                     <div className="delete-btn">
-                        <DeleteBtn title="Close" onClick={handleShow}>
+                        <DeleteBtn title="Delete this course" onClick={handleShow}>
                             X
                         </DeleteBtn>
                     </div>
