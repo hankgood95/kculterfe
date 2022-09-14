@@ -90,6 +90,10 @@ export default function EditPwdInfo() {
     const result = await ResignMembership(NewPwd);
     if(result == 200){
       alert("Resign success");
+      sessionStorage.removeItem("memberHash");
+      sessionStorage.removeItem("memberName");
+      sessionStorage.removeItem("pf_image");
+      sessionStorage.removeItem("mgHash");
       window.location.replace('/')
     }else{
       alert("Resign fail \nPlease contact to hankgood958@gmail.com");
