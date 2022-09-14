@@ -20,7 +20,7 @@ import PrivateRoute from './privateRoute/PrivateRoute';
 function App() {
 	// 모바일 환경 height를 맞추기 위한 함수
 	function setScreenSize() {
-    let vh = window.innerHeight * 0.01;
+		let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   }
 

@@ -2,7 +2,7 @@
   .layout {
     background-color: rgba(238, 238, 238);
     display: grid;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);;
     overflow: auto;
     grid-template-rows: 1fr 10fr;
   }
@@ -12,7 +12,7 @@
   .layout.open {
     background-color: rgba(238, 238, 238);
     display: grid;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);;
     overflow: scroll;
     grid-template-columns: 300px 1fr;
     grid-template-rows: 1fr 10fr;
@@ -21,7 +21,7 @@
   .layout.close {
     background-color: rgba(238, 238, 238);
     display: grid;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);;
     overflow: auto;
     grid-template-rows: 1fr 10fr;
   }

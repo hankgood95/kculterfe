@@ -42,7 +42,7 @@
     overflow: hidden;
 
     background-image: url("../src_asset/로그인배경.png");
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);;
     background-size: cover;
   }
 
@@ -60,7 +60,7 @@
 
     background-image: url("../src_asset/메인홈.png");
     background-size: cover;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);;
   }
 }
 

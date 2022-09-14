@@ -28,7 +28,7 @@
 
 .about-con {
   display: flex;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);;
   width: 9000px;
   font-family: "Poppins", sans-serif;
   width: 100%;

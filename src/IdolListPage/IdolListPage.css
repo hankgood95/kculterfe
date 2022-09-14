@@ -1,7 +1,7 @@
 .main {
 	display: grid;
 	grid-template-columns: 260px 1fr;
-	height: 100vh;
+	height: calc(var(--vh, 1vh) * 100);
 	width: 100vw;
 }
 

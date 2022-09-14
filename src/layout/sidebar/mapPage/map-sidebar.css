@@ -15,7 +15,7 @@
 .inCanvas .map-sidebar {
   display: block;
   background-color: rgb(0, 3, 77);
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);;
   width: 80vw;
 	min-width: 80vw;
   grid-row: 1 / span 4;

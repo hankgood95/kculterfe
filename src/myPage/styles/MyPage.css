@@ -9,7 +9,7 @@
 		margin-left: 4rem;
 		padding-right: 1rem;
 		overflow: auto;
-		height: 75vh;
+		height: calc(var(--vh, 1vh) * 75);
 	}
 }
 
