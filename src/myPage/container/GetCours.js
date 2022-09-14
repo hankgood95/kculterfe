@@ -6,7 +6,7 @@ export async function getCourseList() {
 
     const memberHash = window.sessionStorage.getItem("memberHash")
 
-    return await axios.get('/course/'+ memberHash, {
+    return await axios.get('/course?memberNumhash='+ memberHash, {
         responseType: 'json'
     })
     .then(function(res){
