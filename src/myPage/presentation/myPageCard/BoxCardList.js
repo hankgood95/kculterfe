@@ -20,9 +20,9 @@ function BoxCardList() {
 
 	return (
 		<div className="box-list">
-			{ data&&data.map((course, index) => <BoxCardItem key={index} props={course} dayNum={dayNum++} {...course} />) || <div>Please add course.</div> }
+			{ (data != 0) && data.map((course, index) => <BoxCardItem key={index} props={course} dayNum={dayNum++} {...course} />) || <TextSize>Please add course.</TextSize> }
 			<Link className='text-black' to='/MapPage'>
-				<AddtoCouseBtn>
+				<AddtoCouseBtn title="Add course">
 					+
 				</AddtoCouseBtn>
 			</Link>
@@ -30,13 +30,24 @@ function BoxCardList() {
 	)
 }
 
+// css
+
+const TextSize = styled.div`
+	font-size: 2rem;
+	
+	@media all and (max-width:767px) {
+		text-align: center;
+	}
+
+`
+
 const AddtoCouseBtn = styled.span`
 	font-size: 20px;
 	position: absolute;
 	border-radius: 50%;
 	border: 1px solid gray;
 	box-shadow: 0px 0px 4px 0.1px gray;
-	padding: 1px 10px 3.5px 12px;
+	padding: 1px 11.5px 3.5px 12px;
 	outline: 2px solid black;
 	outline-offset: -9px;
 	background: white;

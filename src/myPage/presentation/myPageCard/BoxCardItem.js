@@ -64,7 +64,7 @@ function BoxCardItem({ props, dayNum }) {
                 </div>
                 <div className='right'>
                     <div className="delete-btn">
-                        <DeleteBtn onClick={handleShow}>
+                        <DeleteBtn title="Close" onClick={handleShow}>
                             X
                         </DeleteBtn>
                     </div>
@@ -105,6 +105,10 @@ const DeleteBtn = styled.button`
     border: 0;
     background: white;
     color: gray;
+
+    &:hover {
+        color: ${pink};
+    }
 `
 
 const ConfirmBtn = styled.button`
