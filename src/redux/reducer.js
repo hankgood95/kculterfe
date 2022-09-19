@@ -31,18 +31,18 @@ const initState = {
 		courseName: null,
 		course: null,
 	},
-	member: null,
-	idolSelected: true,
-	attrSelected: false,
-	concertSelected: false,
-	dashboardSelected: true,
-	settingSelected: false,
 	mapConcert: {
 		keyHash: 0,
 		lat: 0,
 		lng: 0,
 		img: "",
 	},
+	member: null,
+	idolSelected: true,
+	attrSelected: false,
+	concertSelected: false,
+	dashboardSelected: true,
+	settingSelected: false,
 }
 
 // 액션 추가 여기
@@ -56,6 +56,7 @@ export const PUSH_MEMBER = 'PUSH_MEMBER';
 export const SIDE_SET_DASHBOARD = 'SIDE_SET_DASHBOARD';
 export const SIDE_SET_SETTING = 'SIDE_SET_SETTING';
 export const CLEAR_COURSE = 'CLEAR_COURSE';
+export const CLEAR_COURSE_DATA = 'CLEAR_COURSE_DATA';
 export const CLEAR_PLACE = 'CLEAR_PLACE';
 export const SET_KCULTER_PLACE = 'SET_KCULTER_PLACE';
 export const SET_PIN = 'SET_PIN';
@@ -116,6 +117,11 @@ export default function reducer(state = initState, action) {
 			return {
 				...state,
 				course: action.data,
+			}
+		case CLEAR_COURSE_DATA:
+			return {
+				...state,
+				courseData: action.data,
 			}
 		case CLEAR_PLACE:
 			return {

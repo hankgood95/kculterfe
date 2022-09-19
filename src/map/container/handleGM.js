@@ -4,6 +4,7 @@ import {
 } from './handleOnMarker';
 import {
 	CLEAR_COURSE,
+	CLEAR_COURSE_DATA,
 	CLEAR_MAP_CONCERT,
 	CLEAR_PLACE
 } from '../../redux/reducer';
@@ -16,23 +17,32 @@ export function handleOnUnmount(map, setMap, dispatch) {
 		data: [],
 	})
 	dispatch({
+		type: CLEAR_COURSE_DATA,
+		data: {},
+	})
+	dispatch({
 		type: CLEAR_MAP_CONCERT,
 		data: {},
 	})
 	dispatch({
 		type: CLEAR_PLACE,
 		data: {
+			head: "",
+			imageUrl: "",
 			address: "",
 			culture: "",
 			explain: "",
 			fileUrl: "",
 			kpop: "",
 			name: "",
-			courseName: "",
-			memberNum: 0,
+			phone_num: "",
+			photos: [],
+			stayPhotos: [],
+			reviews: [],
+			memberHash: 0,
 			lat: 0,
 			lng: 0,
-			placeNum: 0,
+			keyHash: "",
 			placeType: 0,
 			status: 0,
 		},
