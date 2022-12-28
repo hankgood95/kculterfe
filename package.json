@@ -51,7 +51,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://wooks-weather.com",
+  "proxy": "http://loclhost",
   "eslintConfig": {
     "extends": [
       "react-app",
